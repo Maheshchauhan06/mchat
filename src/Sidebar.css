@@ -1,0 +1,62 @@
+.sidebar {
+  flex: 0.35;
+  background: #bdc3c7;
+  border-radius: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+.header > .MuiSvgIcon-root {
+  cursor: pointer;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: #f2f0f5;
+  border-radius: 20px 0 0 0;
+  justify-content: space-between;
+}
+.header > h3 {
+  margin-left: 10px;
+}
+.searchbox {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background: white;
+  border-radius: 10px;
+}
+.searchbox > input {
+  outline-width: 0;
+  border-width: 0;
+  background: #2ecc71;
+  color: rgb(14, 5, 5);
+  padding: 10px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.searchbox > .MuiSvgIcon-root {
+  color: black;
+}
+.searchbar {
+  padding: 3px;
+  background: #ecf0f1;
+}
+.userchats {
+  flex: 1;
+  overflow-y: scroll;
+}
+.userchat_box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  border-bottom: 1px solid black;
+}
+.userchat_box > h4 {
+  margin-left: 10px;
+}
+.userchats :hover {
+  background: gray;
+}
