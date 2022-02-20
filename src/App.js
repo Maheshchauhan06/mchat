@@ -16,8 +16,8 @@ const App =() => {
      })
     }, []);
 
-    const login = () =>{
-      signInWithPopup(auth , provider)
+    const sigin = () => {
+        signInWithPopup(auth, provider);
     }
      
     
@@ -33,7 +33,7 @@ const App =() => {
        <div className="loginbox">
        <Google/>
        <h1>login ker pehele</h1>
-       <LoginIcon  onClick={ login} />
+       <LoginIcon onClick = {sigin}  />
        </div>
        </div>
       

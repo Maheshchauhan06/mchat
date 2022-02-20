@@ -19,7 +19,7 @@ const Chat = () => {
       <h3> mahesh chauhan</h3>
 
       </div>
-      <div className="body">
+      <div  className="body">
       <div className="msgleft">
        <h2>hlo <p className='time' >4:30am</p></h2>
       </div>
