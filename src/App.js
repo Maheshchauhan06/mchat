@@ -26,7 +26,7 @@ const App =() => {
       user ? <div className="chatpage">
        <div className="chatbox">
       <Sidebar user = {user} />
-      <Chat/>
+      
       </div>
      
       </div> :  <div className="loginpage">

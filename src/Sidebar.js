@@ -11,6 +11,7 @@ import { auth } from './firebase';
 import db from './firebase';
 import { addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, serverTimestamp } from 'firebase/firestore';
 import { useEffect } from 'react';
+import Chat from './Chat'
 
 const Sidebar = ( user) => {
     //  short form of 
@@ -29,7 +30,6 @@ const Sidebar = ( user) => {
         setshowG(sanpshot.docs.map((doc)=>
 (   {  ...doc.data(), id: doc.id}       )
         ));
-        console.log(showG.gname);
       })
     
      
@@ -43,14 +43,33 @@ const Sidebar = ( user) => {
       await addDoc(colref, payload);
       setgroup("");
     }
+ 
+    //  getting groups id
+    const [groupsid, setgroupsid] = useState([])
+
+
+
     // deleting groups
       const deleteg = async (id)=>{
         await deleteDoc(doc(db, 'users', id));
-      }
-        
-     
-     
+      } 
+      console.log(groupsid.gname, "hlo");
 
+         // showing send msges
+      const [smsg, setsmsg] = useState([]);
+      const chat_msg=(show) => {
+        const id = show.id;
+        const msgref = collection(db, 'users', id,'chats');
+        const q = query(msgref, orderBy('createdAt','asc'))
+         onSnapshot(q, (snapshot)=>{
+            setsmsg(snapshot.docs.map((doc)=>
+            ( { ...doc.data(), id: doc.id  })
+            ))
+          } )
+        
+      }
+      
+     console.log(smsg.msg, "chats msg");
 
   return (
       <>
@@ -71,13 +90,14 @@ const Sidebar = ( user) => {
        {
          showG.map((show)=>{
           return (
-            <><div className="userchat_box">
+            <><div className="userchat_box" onClick={()=>{setgroupsid(show); chat_msg(show) }  } >
             <Avatar/>
             <h4 key={show.id} > {show.gname} </h4>
             <IconButton  onClick={()=>deleteg(show.id)} aria-label="delete">
             <DeleteIcon />
           </IconButton>
             </div>
+            
             </>
           )
          })
@@ -85,8 +105,13 @@ const Sidebar = ( user) => {
       
       
        </div>
+       
 
-      </div>
+      </div> { groupsid ?  <Chat  groupid = {groupsid?.id} name = {groupsid?.gname}  />
+
+          : <>  <h1 className='selectchat' >jise baat kerni hai ose to select ker le </h1>
+          </> 
+      }
       </>
   );
 };

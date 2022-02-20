@@ -56,10 +56,17 @@
   padding: 10px;
   background: white;
   border-bottom: 1px solid black;
+  cursor: pointer;
 }
 .userchat_box > h4 {
   margin-left: 10px;
 }
 .userchats :hover {
   background: gray;
+}
+.selectchat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0.65;
 }
