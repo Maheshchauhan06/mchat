@@ -11,7 +11,6 @@ import { Avatar } from '@mui/material';
 import React, { useState } from 'react';
 import './Chat.css'
 import IconButton from '@mui/material/IconButton';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import { styled } from '@mui/system';
@@ -149,7 +148,8 @@ const Sidebar = ( user) => {
     {  //  chat section 👍 👍
     }
 
-      </div> { groupsid ? ( <> <div className="user_chatpage">
+      </div> 
+      { groupsid ? ( <> <div className="user_chatpage">
       
       <div className="chat_header">
       <Avatar/>
@@ -169,7 +169,7 @@ const Sidebar = ( user) => {
            </div>
             </>
           )
-        })
+         }) 
       }
       <div  ref = {bottomofchat}></div>
     
