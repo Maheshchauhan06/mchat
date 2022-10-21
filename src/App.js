@@ -32,7 +32,7 @@ const App =() => {
       </div> :  <div className="loginpage">
        <div className="loginbox">
        <Google/>
-       <h1> Do Login First  </h1>
+       <h1> Do Login By Google  </h1>
        <LoginIcon onClick = {sigin}  />
        </div>
        </div>
