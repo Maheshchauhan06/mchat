@@ -8,8 +8,7 @@ import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import { styled } from '@mui/system';
 import Button from '@mui/material/Button';
 import { addDoc, collection, onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
-import db, { auth } from './firebase';
-import { useEffect } from 'react';
+import db, { auth } from '../firebase';
 
 const Chat = ({name , groupid}) => {
   const Input = styled('input')({

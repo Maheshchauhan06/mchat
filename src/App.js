@@ -1,11 +1,9 @@
-import { Google } from '@mui/icons-material';
-import { onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
+import { onAuthStateChanged} from 'firebase/auth';
 import { useEffect, useState } from 'react';
 import './App.css';
-import { auth, provider } from './firebase';
-import Sidebar from './Sidebar';
-import Chat from './Chat'
-import LoginIcon from '@mui/icons-material/Login';
+import { auth} from './firebase';
+import Sidebar from './Pages/Sidebar';
+import Landingpage from './Pages/Landingpage';
 
 const App =() => {
     const [user, setuser] = useState([]);
@@ -16,9 +14,7 @@ const App =() => {
      })
     }, []);
 
-    const sigin = () => {
-        signInWithPopup(auth, provider);
-    }
+    
      
     
 
@@ -26,15 +22,12 @@ const App =() => {
       user ? <div className="chatpage">
        <div className="chatbox">
       <Sidebar user = {user} />
-      
       </div>
      
-      </div> :  <div className="loginpage">
-       <div className="loginbox">
-       <Google/>
-       <h1> Do Login By Google  </h1>
-       <LoginIcon onClick = {sigin}  />
-       </div>
+      </div> :  
+      <div className="loginpage">
+      <Landingpage/>
+      
        </div>
       
       
