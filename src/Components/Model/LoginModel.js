@@ -12,6 +12,7 @@ import { Box } from '@mui/system';
 
 export default function FormDialog() {
   const [open, setOpen] = useState(false);
+  const [Check, setCheck] = useState(false);
   const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -42,10 +43,12 @@ export default function FormDialog() {
       aria-label="Tabs where selection follows focus"
       selectionFollowsFocus
     >
-      <Tab sx={{width : '50%'}} label="Sign up" />
-      <Tab sx={{width : '50%'}} label="Login" />
+      <Tab onClick={()=>setCheck(false)}   sx={{width : '50%'}} label="Sign up" />
+      <Tab onClick={()=>setCheck(true)}    sx={{width : '50%'}} label="Login" />
     </Tabs>
     </Box>
+        {Check== false ? <Signup/> : <Login/>}
+
          </div>
       </Dialog>
     </div>
