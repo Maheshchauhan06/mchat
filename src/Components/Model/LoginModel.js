@@ -3,7 +3,6 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import './LoginModel.css'
 import { useState } from 'react';
-import { useEffect } from 'react';
 import Login from './Login';
 import Signup from './Signup';
 import Tabs from '@mui/material/Tabs';
@@ -36,15 +35,16 @@ export default function FormDialog() {
          <div className="container">
 
          {/* sign up slider */}
-         <Box sx={{ width: '100%' }}>
+         <Box sx={{ width: '100%',
+         }}>
          <Tabs
       onChange={handleChange}
       value={value}
       aria-label="Tabs where selection follows focus"
       selectionFollowsFocus
     >
-      <Tab onClick={()=>setCheck(false)}   sx={{width : '50%'}} label="Sign up" />
-      <Tab onClick={()=>setCheck(true)}    sx={{width : '50%'}} label="Login" />
+      <Tab onClick={()=>setCheck(false)}   sx={{width : '50%',color:'gray'}} label="Sign up" />
+      <Tab onClick={()=>setCheck(true)}    sx={{width : '50%',color:'gray'}} label="Login" />
     </Tabs>
     </Box>
         {Check== false ? <Signup/> : <Login/>}
