@@ -1,3 +1,11 @@
+:root{
+  --black: black;
+  --white : snow;
+  --gray : gray;
+  --blue : blue;
+}
+
+
 .loginpage {
   width: 100vw;
   height: 100vh;

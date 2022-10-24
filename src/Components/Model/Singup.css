@@ -1,16 +1,48 @@
 .container{
     width: 30rem;
-    height: 33rem;
+    height: fit-content;
     display: flex;
     align-items: center;
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.container > h1{
+    font-size: 1.5rem;
 }
 
 .container > input{
     width: 60%;
     padding: .7rem;
-    margin-top: .8rem;
+    margin-top: .5rem;
     border-radius: .3rem;
     border-width: 0;
     outline-width: 0;
+    border: .5px solid var(--gray);
+}
+
+.signup{
+    margin: 1rem;
+    width: 65%;
+    height: 2rem;
+    background-color: var(--blue);
+    border: 0;
+    color: var(--white);
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.signup:hover{
+    background-color: rgb(46, 46, 238);
+}
+.break{
+    display: flex;
+    align-items: center;
+}
+.break > p{
+    width: 6rem;
+    border: 0.8px solid var(--gray);
+}
+
+.icon{
+    margin: 1rem;
+    cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import './Singup.css'
+import {ReactComponent as Google} from '../../assects/Google.svg'
 
 const Signup = () => {
   return (
@@ -10,7 +11,12 @@ const Signup = () => {
      <input type="email" placeholder='E-mail' />
      <input type="password" placeholder='Password' />
      <input type="password" placeholder='Confirm Password' />
-     
+      <button className='signup' >Sign up</button>
+      <div className="break">
+    <p></p> Or Login with <p></p></div>
+    <div className="icon">
+       <Google/>
+      </div>
     </div>
     </>
   )
