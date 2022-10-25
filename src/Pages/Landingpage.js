@@ -4,8 +4,10 @@ import React from 'react'
 import { auth, provider } from '../firebase';
 import LoginModel from "../Components/Model/LoginModel"
 import './Landingpage.css'
+import Header from '../Components/header/header'
 
 const Landingpage = () => {
+
 
   const sigin = () => {
     signInWithPopup(auth, provider);
@@ -14,6 +16,7 @@ const Landingpage = () => {
 
   return (
     <div className='contain'> 
+    <Header/>
     <div className="loginbox">
     <LoginModel/>
     <Google  onClick = {sigin} />
