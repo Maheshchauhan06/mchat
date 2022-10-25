@@ -5,32 +5,13 @@
   --blue : blue;
 }
 
-
-.loginpage {
+.loginpage{
   width: 100vw;
   height: 100vh;
-  background: #2ecc71;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(0deg, #1CB5E0 2%, #0c1675 98%);
 }
-.loginbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: white;
-  border-radius: 20px;
-  padding: 30px;
-}
-.loginbox > h1 {
-  font-size: 3vw;
-}
-.loginbox > .MuiSvgIcon-root {
-  color: black;
-  font-size: 5vw;
-  cursor: pointer;
-}
+
+
 .chatpage {
   width: 100vw;
   height: 100vh;
