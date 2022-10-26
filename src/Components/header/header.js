@@ -1,9 +1,13 @@
 import React from 'react'
-import logo from '../../assects/logo.jpeg'
+import './header.css'
+import LoginModel from '../Model/LoginModel'
 
 const Header = () => {
   return (
-    <> <img src={logo} alt="internet problem"  />
+    <> <div className="contain-header">
+      <h2>Mchat</h2>
+      <LoginModel/>
+    </div>
     </>
   )
 }

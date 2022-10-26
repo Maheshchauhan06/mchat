@@ -1,0 +1,6 @@
+.contain-header{
+    display: flex;
+    color: snow;
+    justify-content: space-between;
+    padding: 2rem ;
+}

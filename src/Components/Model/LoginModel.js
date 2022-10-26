@@ -28,8 +28,8 @@ export default function FormDialog() {
   return (
     <div  >
        {/* Button to open Dialog */}
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Login 
+      <Button sx={{color:'snow', border:'1px solid snow' }} variant="outlined" onClick={handleClickOpen}>
+        Register / Login 
       </Button>
       <Dialog   open={open} onClose={handleClose}>
          <div className="container">

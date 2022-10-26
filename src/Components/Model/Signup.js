@@ -1,8 +1,15 @@
 import React from 'react'
 import './Singup.css'
 import {ReactComponent as Google} from '../../assects/Google.svg'
+import { signInWithPopup } from 'firebase/auth'
+import { auth, provider } from '../../firebase'
 
 const Signup = () => {
+
+  const sigin = () => {
+    signInWithPopup(auth, provider);
+}
+
   return (
     <> <div className="container">
      <h1> Sign Up  </h1>
@@ -15,7 +22,7 @@ const Signup = () => {
       <div className="break">
     <p></p> Or Login with <p></p></div>
     <div className="icon">
-       <Google/>
+       <Google  onClick = {sigin} />
       </div>
     </div>
     </>
