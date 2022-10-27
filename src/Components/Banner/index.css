@@ -32,8 +32,13 @@
 .banner-rightside{
 display: flex;
 flex: .5;
+align-items: center;
+justify-content: center;
 }
+
 .phone{
     width: fit-content;
     height: 30rem;
+    transform: rotate(-30deg);
+    animation: infinite;
 }
