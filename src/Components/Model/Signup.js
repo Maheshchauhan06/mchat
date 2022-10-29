@@ -12,7 +12,7 @@ const Signup = () => {
 
   return (
     <> <div className="container">
-     <h1> Sign Up  </h1>
+     <h1> Login  </h1>
      <input type="text" placeholder='First Name' />
      <input type="text" placeholder='Last Name' />
      <input type="email" placeholder='E-mail' />

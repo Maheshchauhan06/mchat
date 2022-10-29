@@ -11,7 +11,6 @@ import { Box } from '@mui/system';
 
 export default function FormDialog() {
   const [open, setOpen] = useState(false);
-  const [Check, setCheck] = useState(false);
   const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -29,7 +28,7 @@ export default function FormDialog() {
     <div  >
        {/* Button to open Dialog */}
       <Button sx={{color:'snow', border:'1px solid snow' }} variant="outlined" onClick={handleClickOpen}>
-        Register / Login 
+       Login 
       </Button>
       <Dialog   open={open} onClose={handleClose}>
          <div className="container">
@@ -37,17 +36,9 @@ export default function FormDialog() {
          {/* sign up slider */}
          <Box sx={{ width: '100%',
          }}>
-         <Tabs
-      onChange={handleChange}
-      value={value}
-      aria-label="Tabs where selection follows focus"
-      selectionFollowsFocus
-    >
-      <Tab onClick={()=>setCheck(false)}   sx={{width : '50%',color:'gray'}} label="Sign up" />
-      <Tab onClick={()=>setCheck(true)}    sx={{width : '50%',color:'gray'}} label="Login" />
-    </Tabs>
+        
     </Box>
-        {Check== false ? <Signup/> : <Login/>}
+       <Signup/> 
 
          </div>
       </Dialog>
