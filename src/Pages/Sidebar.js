@@ -40,7 +40,7 @@ const Sidebar = ( user) => {
     }, [])
 
     // adding groups 
-      const [group, setgroup] = useState([])
+      const [group, setgroup] = useState('')
 
     const addgroup = async ()=>{
       const payload = { gname : group, timestamp : serverTimestamp() }
@@ -150,7 +150,7 @@ const Sidebar = ( user) => {
     }
 
       </div> 
-      { groupsid ? ( <> <div className="user_chatpage">
+      { groupsid ?  <div className="user_chatpage">
       
       <div className="chat_header">
       <Avatar/>
@@ -200,12 +200,9 @@ const Sidebar = ( user) => {
     
       </div>
       </div>
-      
-     
-      </> )
 
-          : (<>  <h1 className='selectchat' >jise baat kerni hai ose to select ker le </h1>
-          </>)
+          :   <h1 className='selectchat' >jise baat kerni hai ose to select ker le </h1>
+          
            
       }
       </>
