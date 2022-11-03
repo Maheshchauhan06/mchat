@@ -25,7 +25,6 @@ const App =() => {
       </div> :  
       <div className="loginpage">
       <Landingpage/>
-      
        </div>
       
       

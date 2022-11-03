@@ -12,9 +12,14 @@
 }
 
 .loginpage{
+  width: fit-content;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(0deg, #1CB5E0 2%, #0c1675 98%);
+}
+
+.loginpage::-webkit-scrollbar-track{
+  background: red;
 }
 
 

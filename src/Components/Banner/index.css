@@ -3,7 +3,9 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
+    height: 83vh;
 }
+
 
 .banner-leftside{
    display: flex;
@@ -21,12 +23,12 @@
 }
 
 .discribtion{
-    color: snow;
+    color: var(--white);
     font-size: 1.5rem;
     padding-bottom: 2rem;
 }
 .discribtion2{
-    color: snow;
+    color: var(--white);
     font-size: 1.2rem;
     padding-bottom: 1.5rem;
 }
@@ -56,7 +58,9 @@ justify-content: center;
     
 }
 
-@media screen and (max-width:667px) {
+@media screen and (max-width:647px) {
+
+
     .phone{
         height: 15rem;
     }
@@ -65,8 +69,10 @@ justify-content: center;
         flex-direction: column;
         justify-content: space-between;
         height: 100vh;
-        margin: 0;
-        padding: 0;
+        width: 100vw;
+        padding-left: 1rem;
+    background: linear-gradient(0deg, #1CB5E0 2%, #0c1675 98%);
+
     }
 
     .discribtion{
