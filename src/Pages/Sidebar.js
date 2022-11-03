@@ -34,7 +34,8 @@ const Sidebar = ( user) => {
 (   {  ...doc.data(), id: doc.id}       )
         ));
       })
-    
+     console.log(showG);
+     console.log("😎😎");
      
     }, [])
 

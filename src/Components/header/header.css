@@ -1,4 +1,5 @@
 .contain-header{
+    width: 100vw;
     display: flex;
     color: snow;
     justify-content: space-between;

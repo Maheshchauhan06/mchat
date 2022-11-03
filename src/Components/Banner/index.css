@@ -1,6 +1,8 @@
 .contain-banner{
     display: flex;
-    flex: 1;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
 }
 
 .banner-leftside{
@@ -40,5 +42,41 @@ justify-content: center;
     width: fit-content;
     height: 30rem;
     transform: rotate(-30deg);
-    animation: infinite;
+}
+
+@media  screen and (min-width: 667px ) and (max-width:1023px) {
+
+    .phone{
+        height: 20rem;
+    }  
+
+    .contain2{
+        padding-left: 2rem;
+    }
+    
+}
+
+@media screen and (max-width:667px) {
+    .phone{
+        height: 15rem;
+    }
+    
+    .contain-banner{
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    .discribtion{
+        font-size: 1rem;
+    }
+    .discribtion2{
+        font-size: .6rem;
+    }
+   
+    .banner-rightside{
+        align-items: flex-start;
+    }
 }
