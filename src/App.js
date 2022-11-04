@@ -4,6 +4,8 @@ import './App.css';
 import { auth} from './firebase';
 import Sidebar from './Pages/Sidebar';
 import Landingpage from './Pages/Landingpage';
+import { motion } from 'framer-motion'
+
 
 const App =() => {
     const [user, setuser] = useState([]);
@@ -24,7 +26,23 @@ const App =() => {
      
       </div> :  
       <div className="loginpage">
-      <Landingpage/>
+      <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", duration: 1 }}
+       className="one div"></motion.div>
+      <div  initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", duration: 1 }}
+       className="two div"></div>
+      <div   initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", duration: 1 }} className="three div"></div>
+      <div  initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", duration: 1 }} className="four div"></div>
+      <div className="landingpage">
+      <Landingpage/></div>
        </div>
       
       

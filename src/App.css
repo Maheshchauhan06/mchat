@@ -16,11 +16,11 @@
   width: 100vw;
   height: 100vh;
   background: linear-gradient(0deg, #1CB5E0 2%, #0c1675 98%);
+  position: relative;
+  overflow: hidden;
 }
 
-.loginpage::-webkit-scrollbar-track{
-  background: red;
-}
+
 
 
 .chatpage {
@@ -39,3 +39,91 @@
   display: flex;
 }
 
+.landingpage{
+  position: absolute;
+}
+
+.div{
+  border-radius: 2rem;
+  position: absolute;
+}
+
+.one, .two{
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.three, .four{
+  position: absolute;
+  width: 12rem;
+  height: 12rem;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+
+.one{
+  top: 20rem;
+  width: 14rem;
+  height: 14rem;
+  left: -4rem;
+  transform: rotate(30deg);
+}
+
+.two{
+  top: 10rem;
+  width: 6rem;
+  height: 6rem;
+  transform: rotate(30deg);
+  left: 5rem;
+}
+
+.three{
+  width: 15rem;
+  height: 15rem;
+  top: 5rem;
+  right: -5rem;
+  transform: rotate(45deg);
+}
+.four{
+  width: 10rem;
+  height: 10rem;
+  top: 25rem;
+  right: 2rem;
+  transform: rotate(45deg);
+  background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+}
+
+
+
+
+
+@media screen and (min-width:647px) and (max-width:1023px) {
+ 
+  
+.one{
+  top: 10rem;
+  width: 5rem;
+  height: 5rem;
+  left: 1rem;
+}
+
+.two{
+  top: 20rem;
+  width: 10rem;
+  height: 10rem;
+  transform: rotate(30deg);
+  left: -3rem;
+}
+
+}
+
+
+@media screen and (max-width: 647px) {
+
+  .div{
+    display: none;
+  }
+
+  
+}
