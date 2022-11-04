@@ -3,10 +3,7 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import './LoginModel.css'
 import { useState } from 'react';
-import Login from './Login';
 import Signup from './Signup';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { Box } from '@mui/system';
 
 export default function FormDialog() {
@@ -27,7 +24,7 @@ export default function FormDialog() {
   return (
     <div  >
        {/* Button to open Dialog */}
-      <Button sx={{color:'snow', border:'1px solid snow' }} variant="outlined" onClick={handleClickOpen}>
+      <Button sx={{color:'snow', ":hover":{ color:'blue',background:'snow'  } , border:'1px solid snow' }} variant="outlined" onClick={handleClickOpen}>
        Login 
       </Button>
       <Dialog   open={open} onClose={handleClose}>

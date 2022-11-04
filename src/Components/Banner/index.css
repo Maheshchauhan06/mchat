@@ -13,7 +13,7 @@
    flex: .5;
    align-items: flex-end;
    justify-content: center;
-   padding-right: 4rem;
+   padding-left: 4rem;
 }
 
 .contain2{
@@ -24,12 +24,12 @@
 
 .discribtion{
     color: var(--white);
-    font-size: 1.5rem;
+    font-size: 2.3rem;
     padding-bottom: 2rem;
 }
 .discribtion2{
     color: var(--white);
-    font-size: 1.2rem;
+    font-size: 1.9rem;
     padding-bottom: 1.5rem;
 }
 
@@ -43,7 +43,7 @@ justify-content: center;
 .phone{
     width: fit-content;
     height: 30rem;
-    transform: rotate(-30deg);
+    transform: rotate(-20deg);
 }
 
 @media  screen and (min-width: 667px ) and (max-width:1023px) {
@@ -51,6 +51,14 @@ justify-content: center;
     .phone{
         height: 20rem;
     }  
+
+    .discribtion{
+        font-size: 1.4rem;
+    }
+    .discribtion2{
+        font-size: 1rem;
+    }
+
 
     .contain2{
         padding-left: 2rem;
@@ -79,7 +87,7 @@ justify-content: center;
         font-size: 1rem;
     }
     .discribtion2{
-        font-size: .6rem;
+        font-size: .7rem;
     }
    
     .banner-rightside{
