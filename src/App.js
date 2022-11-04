@@ -26,21 +26,30 @@ const App =() => {
      
       </div> :  
       <div className="loginpage">
-      <motion.div 
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ type: "spring", duration: 1 }}
+      <motion.div  initial={{ opacity: 0, y: 5, rotate:'180deg' }}
+      animate={{ opacity: 1, y: 0 , rotate:'30deg' }}
+      transition={{ type: "spring", duration: 1,  type: "smooth",
+      repeatType: "mirror",
+      repeat: Infinity, }}
        className="one div"></motion.div>
-      <div  initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ type: "spring", duration: 1 }}
-       className="two div"></div>
-      <div   initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ type: "spring", duration: 1 }} className="three div"></div>
-      <div  initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ type: "spring", duration: 1 }} className="four div"></div>
+      <motion.div initial={{ opacity: 0, y: 5, rotate:'180deg' }}
+      animate={{ opacity: 1, y: 0 , rotate:'30deg' }}
+      transition={{ type: "spring", duration: 1,  type: "smooth",
+      repeatType: "mirror",
+      repeat: Infinity, }}
+       className="two div"></motion.div>
+      <motion.div initial={{ opacity: 0, y: 5, rotate:'180deg' }}
+      animate={{ opacity: 1, y: 0 , rotate:'30deg' }}
+      transition={{ type: "spring", duration: 1,  type: "smooth",
+      repeatType: "mirror",
+      repeat: Infinity, }}
+         className="three div"></motion.div>
+      <motion.div initial={{ opacity: 0, y: 5, rotate:'180deg' }}
+      animate={{ opacity: 1, y: 0 , rotate:'30deg' }}
+      transition={{ type: "spring", duration: 1,  type: "smooth",
+      repeatType: "mirror",
+      repeat: Infinity, }}
+       className="four div"></motion.div>
       <div className="landingpage">
       <Landingpage/></div>
        </div>
