@@ -9,16 +9,16 @@ const Signup = () => {
   const sigin = () => {
     signInWithPopup(auth, provider);
 }
+ 
+
+
 
   return (
     <> <div className="container">
      <h1> Login  </h1>
-     <input type="text" placeholder='First Name' />
-     <input type="text" placeholder='Last Name' />
-     <input type="email" placeholder='E-mail' />
+     <input type="email" placeholder='E-mail / User Name' />
      <input type="password" placeholder='Password' />
-     <input type="password" placeholder='Confirm Password' />
-      <button className='signup' >Sign up</button>
+      <button className='signup' >Login</button>
       <div className="break">
     <p></p> Or Login with <p></p></div>
     <div className="icon">

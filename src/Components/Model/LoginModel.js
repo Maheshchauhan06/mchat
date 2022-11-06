@@ -3,10 +3,7 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import './LoginModel.css'
 import { useState } from 'react';
-import Login from './Login';
 import Signup from './Signup';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import { Box } from '@mui/system';
 
 export default function FormDialog() {

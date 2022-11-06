@@ -44,12 +44,15 @@ const App =() => {
       repeatType: "mirror",
       repeat: Infinity, }}
          className="three div"></motion.div>
+
       <motion.div initial={{ opacity: 0.2, y: 5, rotate:'180deg' }}
       animate={{ opacity: 1, y: 0 , rotate:'30deg' }}
       transition={{ type: "spring", duration: 10,  type: "smooth",
       repeatType: "mirror",
       repeat: Infinity, }}
        className="four div"></motion.div>
+
+
       <div className="landingpage">
       <Landingpage/></div>
        </div>
