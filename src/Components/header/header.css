@@ -6,19 +6,21 @@
     padding: 2rem ;
 }
 
-.contain-header > h2{
+.contain-header >a > h2{
     cursor: pointer;
+    color: var(--white);
 }
 
 .leftside{
     display: flex;
 }
 
-.leftside >h2{
+.leftside> a >h2{
     padding-right: 2rem ;
+    color: var(--white);
 }
 
-.leftside > h2:hover{
+.leftside > a > h2:hover{
     text-decoration: underline;
     cursor: pointer;
     color: rgba(255, 250, 250, 0.836)

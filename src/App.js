@@ -5,6 +5,8 @@ import { auth} from './firebase';
 import Sidebar from './Pages/Sidebar';
 import Landingpage from './Pages/Landingpage';
 import { motion } from 'framer-motion'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Register from './Pages/Register';
 
 
 
@@ -50,7 +52,13 @@ const App =() => {
       }
 
       <div className="landingpage">
-      <Landingpage/></div>
+      <BrowserRouter>
+      <Routes>
+      <Route  path = "/" element={<Landingpage/>} />
+      <Route path = "/register" element={ <Register/> } />
+      </Routes>
+      </BrowserRouter>
+      </div>
        </div>
       
       
