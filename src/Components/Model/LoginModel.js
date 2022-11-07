@@ -27,14 +27,10 @@ export default function FormDialog() {
       <Button sx={{color:'snow', ":hover":{color:'blue', background:'snow'} , border:'1px solid snow' }} variant="outlined" onClick={handleClickOpen}>
        Login 
       </Button>
-      <Dialog   open={open} onClose={handleClose}>
+      <Dialog className='dialog' open={open} onClose={handleClose}>
          <div className="container">
 
-         {/* sign up slider */}
-         <Box sx={{ width: '100%',
-         }}>
-        
-    </Box>
+         
        <Signup/> 
 
          </div>
