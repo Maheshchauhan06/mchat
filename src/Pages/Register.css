@@ -11,7 +11,7 @@
     flex-direction: column;
   justify-content: flex-start;
   width: 35rem;
-  height: 28rem;
+  height: fit-content;
   padding: 3rem;
   background: var(--white);
   border-radius: 1rem;

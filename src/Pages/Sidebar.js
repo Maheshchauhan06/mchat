@@ -117,7 +117,7 @@ const Sidebar = ( user) => {
       <div className="sidebar">
       <div className="header">
       <Avatar src= {auth.currentUser?.photoURL} alt = "tera net slow hai" />
-        <h3>{auth.currentUser?.displayName} </h3>
+        <h3>{auth.currentUser?.displayName  } </h3>
         <LogoutIcon  onClick = {logout} />
       </div>
       <div className="searchbar">
