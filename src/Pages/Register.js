@@ -11,11 +11,6 @@ const Register = () => {
   const [Password, setPassword] = useState("");
   const [firstname, setfirstname] = useState("");
   const [lastname, setlastname] = useState("")
-  const [erros, seterros] = useState({
-      Name:' ',
-      password : ' ',
-        emailerror : ' ',
-  })
 
   const handlesubmit = async (e)=>{
 
