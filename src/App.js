@@ -7,8 +7,6 @@ import Landingpage from './Pages/Landingpage';
 import { motion } from 'framer-motion'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Register from './Pages/Register';
-import Chatpage from './Pages/Chatpage';
-
 
 
 const App =() => {
@@ -34,7 +32,6 @@ const App =() => {
       user ? <div className="chatpage">
        <div className="chatbox">
       <Sidebar user = {user} />
-      <Chatpage user = {user} />
       </div>
      
       </div> :  
@@ -63,8 +60,6 @@ const App =() => {
       </div>
        </div>
       
-      
-    
 
   );
 }
