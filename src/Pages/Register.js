@@ -12,7 +12,7 @@ const Register = () => {
         <input type="Email" placeholder="Email" />
         <input type="Password" placeholder="Password" />
         <input type="Password" placeholder="Confirm Password" />
-        <Button sx={{ marginTop:'.5rem', color :'var(--white)', borderColor:"var(--white)", ":hover":{color:'var(--blue)',background:'var(--white)'} }} variant="outlined"> Submit </Button>
+        <Button sx={{ marginTop:'.5rem', color :'var(--blue)', borderColor:"var(--blue)", ":hover":{color:'var(--white)',background:'var(--gray)'},borderColor:'var(--white)' }} variant="outlined"> Submit </Button>
      </div>
       </div>
   )
