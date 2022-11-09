@@ -1,0 +1,84 @@
+.user_chatpage {
+    display: flex;
+    flex-direction: column;
+    width: 66vw;
+    height: 90vh;
+  }
+  .chat_header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: white;
+    border-radius: 1rem;
+  }
+  .chat_header > h3 {
+    margin-left: 20px;
+  }
+  .body {
+    background-image: url(https://w0.peakpx.com/wallpaper/508/606/HD-wallpaper-whatsapp-l-background-doodle-pattern-patterns.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1;
+    overflow-y: scroll;
+    padding: .6rem .9rem;
+  }
+
+  .msg-left{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .msg-left > h2 {
+    position: relative;
+    width: fit-content;
+    background: #0a74bb;
+    padding-left: auto;
+    border-radius: 10px 0px 10px 10px;
+  }
+  .msg-right  > h2 {
+    position: relative;
+    width: fit-content;
+    background: #03f367;
+    padding-right: auto;
+    border-radius: 0px 10px 10px 10px;
+  }
+  .chatright-photo {
+    position: absolute;
+    left: 10px;
+    font-size: 13px;
+    background: #03f367;
+  }
+  .chatright-name {
+    position: absolute;
+    bottom: -10px;
+    font-size: 10px;
+  }
+  .chatleft-photo {
+    position: absolute;
+    left: -10px;
+    font-size: 13px;
+  }
+  .chatleft-name {
+    position: absolute;
+    bottom: -10px;
+    font-size: 10px;
+  }
+
+  
+  .footer {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+  }
+  .input_fieldbox {
+    flex: 1;
+  }
+
+  .msg{
+    background: #03f367;
+    border-radius: 1rem ;
+  }
+  
