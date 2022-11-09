@@ -1,0 +1,15 @@
+.chat-box{
+    width: 95%;
+    height: 90%;
+    background: var(--white);
+    border-radius: 1rem;
+    display: flex;
+}
+
+.Chatleftside{
+    width: 30%;
+}
+
+.chatrightside{
+  width: 60%;
+}

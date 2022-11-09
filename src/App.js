@@ -2,11 +2,12 @@ import { onAuthStateChanged} from 'firebase/auth';
 import { useEffect, useState } from 'react';
 import './App.css';
 import { auth} from './firebase';
-import Sidebar from './Pages/Sidebar';
 import Landingpage from './Pages/Landingpage';
 import { motion } from 'framer-motion'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Register from './Pages/Register';
+import Sidebar from './Pages/Sidebar';
+import Chatpage from './Pages/Chatpage';
 
 
 const App =() => {
@@ -30,10 +31,7 @@ const App =() => {
 
   return (
       user ? <div className="chatpage">
-       <div className="chatbox">
-      <Sidebar user = {user} />
-      </div>
-     
+       <Chatpage/>
       </div> :  
       <div className="loginpage">
     
