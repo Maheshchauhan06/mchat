@@ -1,14 +1,18 @@
 import React from 'react'
 import './Chatpage.css'
+import Rightside from '../Components/Rightside/Rightside'
+import Leftside from '../Components/Leftside/leftcomp/Leftside'
 
-const Chatpage = () => {
+const Chatpage = ({user}) => {
+
+  
   return (
     <div className='chat-box' >
         <div className="Chatleftside">
-        left side
+        <Leftside user={user} />
         </div>
         <div className="chatrightside">
-        right side
+         <Rightside/>
         </div>
     </div>
   )

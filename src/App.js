@@ -31,7 +31,7 @@ const App =() => {
 
   return (
       user ? <div className="chatpage">
-       <Chatpage/>
+       <Chatpage user={user} />
       </div> :  
       <div className="loginpage">
     
