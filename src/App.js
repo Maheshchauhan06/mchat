@@ -6,7 +6,6 @@ import Landingpage from './Pages/Landingpage';
 import { motion } from 'framer-motion'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Register from './Pages/Register';
-import Sidebar from './Pages/Sidebar';
 import Chatpage from './Pages/Chatpage';
 
 
