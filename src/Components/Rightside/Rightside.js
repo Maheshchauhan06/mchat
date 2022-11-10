@@ -11,7 +11,7 @@ import db from '../../firebase';
 import { addDoc, collection, onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
 
 
-const Rightside = ({groupid, getgroup}) => {
+const Rightside = ({groupid}) => {
 
 
     const [gname, setgname] = useState([])

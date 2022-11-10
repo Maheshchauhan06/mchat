@@ -7,16 +7,15 @@ import { useState } from 'react'
 const Chatpage = ({user}) => {
 
     const [groupid, setgroupid] = useState('')
-    const [getgroup, setgetgroup] = useState('')
   
   
   return (
     <div className='chat-box' >
         <div className="Chatleftside">
-        <Leftside user={user} groupid={setgroupid} getgroup ={setgetgroup} />
+        <Leftside user={user} groupid={setgroupid} />
         </div>
         <div className="chatrightside">
-         <Rightside groupid={groupid} setgetgroup={getgroup} />
+         <Rightside groupid={groupid} />
         </div>
     </div>
   )
