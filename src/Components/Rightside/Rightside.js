@@ -11,7 +11,7 @@ import db from '../../firebase';
 import { addDoc, collection, onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
 
 
-const Rightside = ({groupid}) => {
+const Rightside = ({groupid , newgname}) => {
 
 
     const [gname, setgname] = useState([])
@@ -61,7 +61,7 @@ const Rightside = ({groupid}) => {
       
     <div className="chat_header">
     <Avatar/>
-    <h3> {groupid} </h3>
+    <h3>  {newgname} </h3>
 
     </div>
     <div  className="body"  >

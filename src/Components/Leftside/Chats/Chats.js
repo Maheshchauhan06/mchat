@@ -6,19 +6,24 @@ import { deleteDoc, doc } from 'firebase/firestore';
 import db from '../../../firebase';
 
 
-const Chats = ({id,groupname,groupid}) => {
+const Chats = ({id,groupname,groupid,newgname}) => {
 
 
   const deleted = async()=>{
     await deleteDoc(doc(db,'users',id))
     groupid('');
-    console.log(groupid);
+    newgname('');
   }
+
+    const value = ()=>{
+      groupid(id)
+      newgname(groupname)
+    }
   
 
   return (
     <>
-    <div onClick={ groupid(id) } className="userchat_box">
+    <div onClick={ value } className="userchat_box">
           <Avatar/>
           <h4 > {groupname} </h4>
           <IconButton   aria-label="delete">
