@@ -1,19 +1,50 @@
 import { Avatar, IconButton } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Leftside.css'
 import LogoutIcon from '@mui/icons-material/Logout';
 import SearchIcon from '@mui/icons-material/Search';
-import { auth } from '../../../firebase';
+import db, { auth } from '../../../firebase';
 import Button from '@mui/material/Button';
 import Chats from '../Chats/Chats';
 import { signOut } from 'firebase/auth';
+import { addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, serverTimestamp } from 'firebase/firestore';
 
 
-const Leftside = ({user}) => {
+const Leftside = ({user, groupid}) => {
 
+  // to logout 
    const logout = () =>{
      signOut(auth,user)
    }
+
+   // short form
+   const colref = collection(db, "users")
+
+   // creating groups
+   const [showG, setshowG] = useState([])
+    useEffect(() => {
+      const q = query(colref , orderBy('timestamp', 'desc'))
+      onSnapshot(q , (sanpshot)=>{
+        setshowG(sanpshot.docs.map((doc)=>
+(   {  ...doc.data(), id: doc.id}       )
+        ));
+      })
+     console.log(showG);
+     console.log("😎😎");
+     
+    }, [])
+
+    
+    // adding groups 
+    const [group, setgroup] = useState('')
+
+    const addgroup = async ()=>{
+      const payload = { gname : group, timestamp : serverTimestamp() }
+      await addDoc(colref, payload);
+      setgroup("");
+    }
+
+    
 
 
   return (
@@ -26,12 +57,18 @@ const Leftside = ({user}) => {
     </div>
     <div className="searchbar">
    <div className="searchbox"> <SearchIcon/>
-   <input  type="text" placeholder='create group'/>
-   <Button variant="contained" href="#contained-buttons" >
+   <input value={group} onChange= {e => setgroup(e.target.value)}  type="text" placeholder='create group'/>
+   <Button disabled ={!group} onClick={addgroup} variant="contained" href="#contained-buttons" >
    Create
  </Button>  </div>
-    </div>
-     <Chats/>
+    </div> <div className="userchats">
+    { showG.map((show)=>{
+           return(
+     <Chats id={show.id} groupname= {show.gname} user={user} groupid={groupid} />
+           )
+    })
+
+    }</div>
     </div> 
     </div>
     </>
