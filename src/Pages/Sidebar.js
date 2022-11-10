@@ -58,6 +58,7 @@ const Sidebar = ( user) => {
         await deleteDoc(doc(db, 'users', id));
       } 
       console.log(groupsid.gname, "hlo");
+      
        // sending msg 
   const [newmsg, setnewmsg] = useState([]);
  console.log(newmsg, "mesg");

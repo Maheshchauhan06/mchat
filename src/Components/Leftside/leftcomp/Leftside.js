@@ -64,7 +64,7 @@ const Leftside = ({user, groupid}) => {
     </div> <div className="userchats">
     { showG.map((show)=>{
            return(
-     <Chats id={show.id} groupname= {show.gname} user={user} groupid={groupid} />
+     <Chats id={show.id} groupname= {show.gname} groupid={groupid} />
            )
     })
 

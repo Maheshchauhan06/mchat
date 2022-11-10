@@ -5,15 +5,20 @@ import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import Button from '@mui/material/Button';
+import { useEffect } from 'react';
 
-const Rightside = () => {
+const Rightside = ({groupid}) => {
+
+  
+  
+
   return (
     <>
     <div className="user_chatpage">
       
     <div className="chat_header">
     <Avatar/>
-    <h3> goku </h3>
+    <h3> hlo </h3>
 
     </div>
     <div  className="body"  >

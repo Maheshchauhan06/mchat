@@ -1,27 +1,29 @@
 import { Avatar, IconButton } from '@mui/material'
-import  { useState } from 'react'
+import React from 'react'
 import './Chats.css'
 import DeleteIcon from '@mui/icons-material/Delete';
 import { deleteDoc, doc } from 'firebase/firestore';
-import db, { auth } from '../../../firebase';
+import db from '../../../firebase';
 
 
-const Chats = ( {groupid,id, groupname} ) => {
+const Chats = ({id,groupname,groupid}) => {
 
 
-  // deleting groups
-  const deleteg = async ()=>{
-   await deleteDoc(doc(db,'users',id))
-    console.log(id,groupname);
-  } 
+  const deleted = async()=>{
+    await deleteDoc(doc(db,'users',id))
+    groupid('');
+    console.log(groupid);
+  }
+  
+  
 
   return (
     <>
-    <div  onClick={()=>groupid(id)} className="userchat_box">
+    <div onClick={()=> groupid(id) } className="userchat_box">
           <Avatar/>
           <h4 > {groupname} </h4>
           <IconButton   aria-label="delete">
-          <DeleteIcon onClick={deleteg} />
+          <DeleteIcon  onClick={deleted} />
         </IconButton>
           </div>
     </>
