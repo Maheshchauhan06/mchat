@@ -53,6 +53,7 @@
   }
   .chatright-name {
     position: absolute;
+    left: 15px;
     bottom: -10px;
     font-size: 10px;
   }
