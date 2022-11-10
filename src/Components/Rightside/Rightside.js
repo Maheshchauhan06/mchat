@@ -67,11 +67,11 @@ const Rightside = ({groupid, getgroup}) => {
     <div  className="body"  >
     { smsg.map((show)=>{ 
       return( <>
-    <div className= {show.from===auth.currentUser.email ? "msg-right" : "msg-left"} >
-        <h2 className ="chatright-msg" > 
-        <Avatar src={show?.photo} className = "chatright-photo" />
+    <div className= {show.from===auth.currentUser.email ? "msg-left msg" : "msg-right msg"} >
+        <h2 className ={show.from===auth.currentUser.email ? "chatleft-msg" : "chatright-msg"} > 
+        <Avatar src={show?.photo} className = {show.from===auth.currentUser.email ? "chatleft-photo" : "chatright-photo"}/>
         {show?.newmsg}
-        <p className = "chatright-name" > {console.log(show?.name)} {show?.name} </p>
+        <p className = {show.from===auth.currentUser.email ? "chatleft-name" : "chatright-name"} >{show?.name} </p>
           </h2>
         </div>
       
