@@ -88,7 +88,6 @@ const Sidebar = ( user) => {
             ( { ...doc.data(), id: doc.id  })
             ))
           } )
-        
       }
       
      console.log(smsg, "chats msg");

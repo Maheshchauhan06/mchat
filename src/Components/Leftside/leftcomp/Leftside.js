@@ -10,7 +10,7 @@ import { signOut } from 'firebase/auth';
 import { addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, serverTimestamp } from 'firebase/firestore';
 
 
-const Leftside = ({user, groupid}) => {
+const Leftside = ({user, groupid,getgroup}) => {
 
   // to logout 
    const logout = () =>{
@@ -64,7 +64,7 @@ const Leftside = ({user, groupid}) => {
     </div> <div className="userchats">
     { showG.map((show)=>{
            return(
-     <Chats id={show.id} groupname= {show.gname} groupid={groupid} />
+     <Chats id={show.id} groupname= {show.gname} groupid={groupid}  getgroup={getgroup} />
            )
     })
 

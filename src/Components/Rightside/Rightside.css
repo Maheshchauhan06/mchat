@@ -54,7 +54,7 @@
   .chatright-name {
     position: absolute;
     left: 15px;
-    bottom: -10px;
+    bottom: -23px;
     font-size: 10px;
   }
   .chatleft-photo {
@@ -64,7 +64,7 @@
   }
   .chatleft-name {
     position: absolute;
-    bottom: -10px;
+    bottom: -23px;
     font-size: 10px;
   }
 
