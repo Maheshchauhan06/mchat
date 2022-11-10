@@ -25,9 +25,9 @@ const Rightside = ({groupid , newgname}) => {
      // showing send msges
      const [smsg, setsmsg] = useState([]);
      const chat_msg= async (groupid) => {
-     await   setgname(groupid);
+    await   setgname(groupid);
        const id = groupid;
-       const msgref = collection(db, 'users', id,'chats');
+       const msgref = await collection(db, 'users', id,'chats');
        const q = query(msgref, orderBy('createdAt','asc'))
         onSnapshot (q, async (snapshot)=>{
           await setsmsg(snapshot.docs.map((doc)=>
@@ -56,12 +56,12 @@ const Rightside = ({groupid , newgname}) => {
   
 
   return (
-    <> { groupid ? 
+    <> 
     <div className="user_chatpage">
       
     <div className="chat_header">
     <Avatar/>
-    <h3>  {newgname} </h3>
+    <h3>  {groupid ? newgname : "Selcet a chat for text" } </h3>
 
     </div>
     <div  className="body"  >
@@ -77,23 +77,22 @@ const Rightside = ({groupid , newgname}) => {
       
   <div ></div> </> )})}
     </div>
-    <div className="footer">
+    <form onSubmit={(e)=>sendmsg(e)} className="footer">
     <label htmlFor="icon-button-file">
-    <Input sx={{width:'0px'}} accept="image/*" id="icon-button-file" type="file" />
-    <IconButton color="primary" aria-label="upload picture" component="span">
+    <Input disabled={!groupid} sx={{width:'0px'}} accept="image/*" id="icon-button-file" type="file" />
+    <IconButton disabled={!groupid}  color="primary" aria-label="upload picture" component="span">
       <PhotoCamera />
     </IconButton>
   </label>
   <div className="input_fieldbox">
  
-<TextField fullWidth  value={newmsg} onChange = {(e)=> setnewmsg(e.target.value)}   id="standard-basic" label="type something" variant="standard" /> 
+<TextField fullWidth disabled={!groupid}  value={newmsg} onChange = {(e)=> setnewmsg(e.target.value)}   id="standard-basic" label="type something" variant="standard" /> 
   </div>
-  <Button disabled = {!newmsg} onClick={(e)=>sendmsg(e)}  variant="contained"> send </Button>
+  <Button disabled = {!newmsg || !groupid } type="submit" variant="contained"> send </Button>
  
   
+    </form>
     </div>
-    </div>
-  : <h2>slect ker le pehele</h2> }
     </>
   )
 }

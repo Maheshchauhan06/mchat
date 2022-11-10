@@ -38,7 +38,8 @@ const Leftside = ({user, groupid, newgname}) => {
     // adding groups 
     const [group, setgroup] = useState('')
 
-    const addgroup = async ()=>{
+    const addgroup = async (e)=>{
+      e.preventDefault();
       const payload = { gname : group, timestamp : serverTimestamp() }
       await addDoc(colref, payload);
       setgroup("");
@@ -57,11 +58,12 @@ const Leftside = ({user, groupid, newgname}) => {
       <LogoutIcon onClick={logout} />
     </div>
     <div className="searchbar">
-   <div className="searchbox"> <SearchIcon/>
+   <form onSubmit={addgroup}  className="searchbox"> 
+   <SearchIcon/>
    <input value={group} onChange= {e => setgroup(e.target.value)}  type="text" placeholder='create group'/>
-   <Button disabled ={!group} onClick={addgroup} variant="contained" href="#contained-buttons" >
+   <Button disabled ={!group} type='submit' variant="contained" href="#contained-buttons" >
    Create
- </Button>  </div>
+ </Button>  </form>
     </div> <div className="userchats">
     { showG.map((show)=>{
            return(
