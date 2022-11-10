@@ -6,6 +6,8 @@ import Leftside from '../Components/Leftside/leftcomp/Leftside'
 const Chatpage = ({user}) => {
 
   
+
+  
   return (
     <div className='chat-box' >
         <div className="Chatleftside">
