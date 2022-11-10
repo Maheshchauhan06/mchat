@@ -69,7 +69,7 @@ const Rightside = ({groupid, getgroup}) => {
       return( <>
     <div className= {show.from===auth.currentUser.email ? "msg-right" : "msg-left"} >
         <h2 className ="chatright-msg" > 
-        <Avatar className = "chatright-photo" />
+        <Avatar src={show?.photo} className = "chatright-photo" />
         {show?.newmsg}
         <p className = "chatright-name" > {console.log(show?.name)} {show?.name} </p>
           </h2>
