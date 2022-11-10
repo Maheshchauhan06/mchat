@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { auth } from '../../firebase';
 import db from '../../firebase';
 import { addDoc, collection, onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
+import { useRef } from 'react';
 
 
 const Rightside = ({groupid , newgname}) => {
@@ -21,6 +22,7 @@ const Rightside = ({groupid , newgname}) => {
         chat_msg(groupid)
     }, [groupid])
     
+
 
      // showing send msges
      const [smsg, setsmsg] = useState([]);
@@ -35,7 +37,13 @@ const Rightside = ({groupid , newgname}) => {
            ))
          } )
      }
-      console.log(gname);
+
+   const scrollmsg = useRef(null);
+
+     useEffect(() => {
+     scrollmsg.current?.scrollIntoView({ behavior:'smooth' });
+     }, [smsg])
+     
 
        // sending msg 
   const [newmsg, setnewmsg] = useState([]);
@@ -54,6 +62,10 @@ const Rightside = ({groupid , newgname}) => {
      setnewmsg("");
    }
   
+
+   
+   
+
 
   return (
     <> 
@@ -76,6 +88,7 @@ const Rightside = ({groupid , newgname}) => {
         </div>
       
   <div ></div> </> )})}
+    <div ref={scrollmsg} ></div>
     </div>
     <form onSubmit={(e)=>sendmsg(e)} className="footer">
     <label htmlFor="icon-button-file">

@@ -21,6 +21,7 @@
     background-size: cover;
     flex: 1;
     overflow-y: scroll;
+    scroll-behavior: smooth;
     padding: .6rem .9rem;
   }
 
