@@ -61,7 +61,7 @@ const Leftside = ({user, groupid, newgname}) => {
    <form onSubmit={addgroup}  className="searchbox"> 
    <SearchIcon/>
    <input value={group} onChange= {e => setgroup(e.target.value)}  type="text" placeholder='create group'/>
-   <Button disabled ={!group} type='submit' variant="contained" href="#contained-buttons" >
+   <Button disabled ={!group} type='submit' variant="contained">
    Create
  </Button>  </form>
     </div> <div className="userchats">

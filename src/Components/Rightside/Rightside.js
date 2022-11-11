@@ -8,15 +8,18 @@ import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { auth } from '../../firebase';
 import db from '../../firebase';
-import { addDoc, collection, onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
 import { useRef } from 'react';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { async } from '@firebase/util';
+
 
 
 const Rightside = ({groupid , newgname}) => {
 
 
     const [gname, setgname] = useState([])
-
+   
 
     useEffect(() => {
         chat_msg(groupid)
@@ -37,6 +40,12 @@ const Rightside = ({groupid , newgname}) => {
            ))
          } )
      }
+
+     const deleted =(id)=>{
+      setsmsg(smsg.filter((dele)=> dele.id!=id ))
+     }
+    
+
 
    const scrollmsg = useRef(null);
 
@@ -61,9 +70,7 @@ const Rightside = ({groupid , newgname}) => {
      await addDoc(collection(db, 'users', userg, 'chats'),payload2);
      setnewmsg("");
    }
-  
 
-   
    
 
 
@@ -76,24 +83,27 @@ const Rightside = ({groupid , newgname}) => {
     <h3>  {groupid ? newgname : "Selcet a chat for text" } </h3>
 
     </div>
-    <div  className="body"  >
-    { smsg.map((show)=>{ 
+    <div  className="body"  > 
+    { groupid ? smsg.map((show)=>{ 
       return( <>
     <div className= {show.from===auth.currentUser.email ? "msg-left msg" : "msg-right msg"} >
         <h2 className ={show.from===auth.currentUser.email ? "chatleft-msg" : "chatright-msg"} > 
+        <IconButton onClick={()=>deleted(show.id)}  aria-label="delete">
+        <DeleteIcon  />
+      </IconButton>
         <Avatar src={show?.photo} className = {show.from===auth.currentUser.email ? "chatleft-photo" : "chatright-photo"}/>
-        {show?.newmsg}
+ {show?.newmsg} 
         <p className = {show.from===auth.currentUser.email ? "chatleft-name" : "chatright-name"} >{show?.name} </p>
           </h2>
         </div>
       
-  <div ></div> </> )})}
+  <div ></div> </> )}) : <h1>selcet group to chat</h1> } 
     <div ref={scrollmsg} ></div>
     </div>
     <form onSubmit={(e)=>sendmsg(e)} className="footer">
     <label htmlFor="icon-button-file">
     <Input disabled={!groupid} sx={{width:'0px'}} accept="image/*" id="icon-button-file" type="file" />
-    <IconButton disabled={!groupid}  color="primary" aria-label="upload picture" component="span">
+    <IconButton disabled={!groupid}   color="primary" aria-label="upload picture" component="span">
       <PhotoCamera />
     </IconButton>
   </label>
