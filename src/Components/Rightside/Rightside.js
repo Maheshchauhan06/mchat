@@ -8,10 +8,11 @@ import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { auth } from '../../firebase';
 import db from '../../firebase';
-import { addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
+import { addDoc, collection, onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
 import { useRef } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { async } from '@firebase/util';
+import {motion} from 'framer-motion'
+import { Opacity } from '@mui/icons-material';
 
 
 
@@ -78,15 +79,23 @@ const Rightside = ({groupid , newgname}) => {
     <> 
     <div className="user_chatpage">
       
-    <div className="chat_header">
+    <motion.div  initial={{Opacity:0, x:50 }}
+      animate={{opacity:1, x:0 }}
+      transition={{ type:'spring', duration: 2 }}
+
+    className="chat_header">
     <Avatar/>
     <h3>  {groupid ? newgname : "Selcet a chat for text" } </h3>
 
-    </div>
+    </motion.div>
     <div  className="body"  > 
     { groupid ? smsg.map((show)=>{ 
       return( <>
-    <div className= {show.from===auth.currentUser.email ? "msg-left msg" : "msg-right msg"} >
+    <motion.div  initial={{Opacity:0, y:50 }}
+    animate={{opacity:1, y:0 }}
+    transition={{ type:'spring', duration: 2 }}
+
+     className= {show.from===auth.currentUser.email ? "msg-left msg" : "msg-right msg"} >
         <h2 className ={show.from===auth.currentUser.email ? "chatleft-msg" : "chatright-msg"} > 
         <IconButton onClick={()=>deleted(show.id)}  aria-label="delete">
         <DeleteIcon  />
@@ -95,9 +104,12 @@ const Rightside = ({groupid , newgname}) => {
  {show?.newmsg} 
         <p className = {show.from===auth.currentUser.email ? "chatleft-name" : "chatright-name"} >{show?.name} </p>
           </h2>
-        </div>
+        </motion.div>
       
-  <div ></div> </> )}) : <h1>selcet group to chat</h1> } 
+  <div ></div> </> )}) : <motion.h1 initial={{Opacity:0, x:50 }}
+  animate={{opacity:1, x:0 }}
+  transition={{ type:'spring', duration: 2 }}
+  >selcet group to chat</motion.h1> } 
     <div ref={scrollmsg} ></div>
     </div>
     <form onSubmit={(e)=>sendmsg(e)} className="footer">

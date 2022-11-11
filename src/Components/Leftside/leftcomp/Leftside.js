@@ -7,8 +7,8 @@ import db, { auth } from '../../../firebase';
 import Button from '@mui/material/Button';
 import Chats from '../Chats/Chats';
 import { signOut } from 'firebase/auth';
-import { addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, serverTimestamp } from 'firebase/firestore';
-import { fontSize } from '@mui/system';
+import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp } from 'firebase/firestore';
+import { motion } from 'framer-motion'
 
 
 const Leftside = ({user, groupid, newgname}) => {
@@ -53,11 +53,14 @@ const Leftside = ({user, groupid, newgname}) => {
   return (
     <> <div className="left-box">
     <div className="sidebar">
-    <div className="header">
-    <Avatar src= {auth.currentUser?.photoURL} alt = "tera net slow hai" />
+    <motion.div  initial={{ opacity:0, x:50 }}
+    animate={{ opacity:1, x:0 }}
+    transition={{ type:'spring', duration: 1 }}
+    className="header">
+    <Avatar src= { auth.currentUser?.photoURL } alt = "tera net slow hai" />
       <h3>{auth.currentUser?.displayName  } </h3>
       <LogoutIcon onClick={logout} />
-    </div>
+    </motion.div>
     <div className="searchbar">
    <form onSubmit={addgroup}  className="searchbox"> 
    <p> <SearchIcon/>  </p> 
@@ -65,7 +68,8 @@ const Leftside = ({user, groupid, newgname}) => {
    <Button sx={{ maxWidth:'40%' ,minWidth:'30%', fontSize:'60%' }}  disabled ={!group} type='submit' variant="contained">
    Create
  </Button>  </form>
-    </div> <div className="userchats">
+    </div> <div
+     className="userchats">
     { showG.map((show)=>{
            return(
      <Chats id={show.id} groupname= {show.gname} groupid={groupid} newgname={newgname} />
