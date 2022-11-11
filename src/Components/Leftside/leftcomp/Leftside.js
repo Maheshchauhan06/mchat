@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Chats from '../Chats/Chats';
 import { signOut } from 'firebase/auth';
 import { addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, serverTimestamp } from 'firebase/firestore';
+import { fontSize } from '@mui/system';
 
 
 const Leftside = ({user, groupid, newgname}) => {
@@ -59,9 +60,9 @@ const Leftside = ({user, groupid, newgname}) => {
     </div>
     <div className="searchbar">
    <form onSubmit={addgroup}  className="searchbox"> 
-   <SearchIcon/>
-   <input value={group} onChange= {e => setgroup(e.target.value)}  type="text" placeholder='create group'/>
-   <Button disabled ={!group} type='submit' variant="contained">
+   <p> <SearchIcon/>  </p> 
+   <input   value={group} onChange= {e => setgroup(e.target.value)}  type="text" placeholder='create group'/>
+   <Button sx={{ maxWidth:'40%' ,minWidth:'30%', fontSize:'60%' }}  disabled ={!group} type='submit' variant="contained">
    Create
  </Button>  </form>
     </div> <div className="userchats">

@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     height: 90vh;
+    width: 100%;
   }
   .header > .MuiSvgIcon-root {
     cursor: pointer;
@@ -54,4 +55,18 @@
     align-items: center;
     justify-content: center;
     flex: 0.65;
+  }
+
+  @media screen and (max-width: 456px)  {
+     .searchbox > p{
+      display: none;
+     }
+     .searchbox > input{
+      width: 4rem;
+     }
+
+     .searchbox > input::placeholder{
+      font-size: 80%;
+     }
+     
   }
