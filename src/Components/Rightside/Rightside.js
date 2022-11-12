@@ -8,11 +8,9 @@ import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { auth } from '../../firebase';
 import db from '../../firebase';
-import { addDoc, collection, onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
+import { addDoc, collection ,onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
 import { useRef } from 'react';
-import DeleteIcon from '@mui/icons-material/Delete';
 import {motion} from 'framer-motion'
-import { Opacity } from '@mui/icons-material';
 
 
 
@@ -40,10 +38,6 @@ const Rightside = ({groupid , newgname}) => {
            ( { ...doc.data(), id: doc.id  })
            ))
          } )
-     }
-
-     const deleted =(id)=>{
-      setsmsg(smsg.filter((dele)=> dele.id!=id ))
      }
     
 
@@ -97,9 +91,6 @@ const Rightside = ({groupid , newgname}) => {
 
      className= {show.from===auth.currentUser.email ? "msg-left msg" : "msg-right msg"} >
         <h2 className ={show.from===auth.currentUser.email ? "chatleft-msg" : "chatright-msg"} > 
-        <IconButton onClick={()=>deleted(show.id)}  aria-label="delete">
-        <DeleteIcon  />
-      </IconButton>
         <Avatar src={show?.photo} className = {show.from===auth.currentUser.email ? "chatleft-photo" : "chatright-photo"}/>
  {show?.newmsg} 
         <p className = {show.from===auth.currentUser.email ? "chatleft-name" : "chatright-name"} >{show?.name} </p>
