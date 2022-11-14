@@ -7,11 +7,12 @@ import db, { auth } from '../../../firebase';
 import Button from '@mui/material/Button';
 import Chats from '../Chats/Chats';
 import { signOut } from 'firebase/auth';
-import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp } from 'firebase/firestore';
+import { addDoc, collection, doc, onSnapshot, orderBy, query, serverTimestamp, where } from 'firebase/firestore';
 import { motion } from 'framer-motion'
 
 
-const Leftside = ({user, groupid, newgname}) => {
+
+const Leftside = ({user, groupid, newgname, photourl}) => {
 
   // to logout 
    const logout = () =>{
@@ -21,8 +22,9 @@ const Leftside = ({user, groupid, newgname}) => {
    // short form
    const colref = collection(db, "users")
 
-   // creating groups
+   // showing groups
    const [showG, setshowG] = useState([])
+   const [people, setpeople] = useState([])
     useEffect(() => {
       const q = query(colref , orderBy('timestamp', 'desc'))
       onSnapshot(q , (sanpshot)=>{
@@ -31,6 +33,16 @@ const Leftside = ({user, groupid, newgname}) => {
         ));
       })
      console.log(showG);
+     console.log("😎😎");
+
+     const newq = query(collection(db,'people'),where('id','not-in',[auth.currentUser?.uid]))
+     onSnapshot(newq,(snap)=>{
+      setpeople( snap.docs.map((doc)=>(
+       { ...doc.data(), id: doc.id}
+      ))
+      )
+     })
+     console.log(people);
      console.log("😎😎");
      
     }, [])
@@ -74,9 +86,20 @@ const Leftside = ({user, groupid, newgname}) => {
            return(
      <Chats id={show.id} groupname= {show.gname} groupid={groupid} newgname={newgname} />
            )
-    })
-
-    }</div>
+    })}{
+      people.map((show)=>{
+        return(
+          <motion.div onClick={()=>{ {groupid(show.id)} {photourl(show.photo)} {newgname(show.name)} }} initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ type: "spring", duration: 2 }}
+     className="userchat_box">
+          <Avatar src={show.photo} />
+          <h4 > {show.name} </h4>
+          </motion.div>
+        )
+      })
+    }
+    </div>
     </div> 
     </div>
     </>

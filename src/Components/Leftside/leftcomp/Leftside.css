@@ -57,6 +57,31 @@
     flex: 0.65;
   }
 
+  
+  .userchat_box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    cursor: pointer;
+    border-bottom: 1px solid gray;
+    margin: 2px 0;
+  }
+  .userchat_box > h4 {
+    margin-left: 10px;
+    font-size: 1rem;
+    color: var(--black);
+  }
+
+  .userchat_box > h4:hover {
+    color: var(--blue);
+  }
+
+
+  .userchats :hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
   @media screen and (max-width: 456px)  {
      .searchbox > p{
       display: none;

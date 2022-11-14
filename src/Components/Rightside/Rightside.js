@@ -14,7 +14,7 @@ import {motion} from 'framer-motion'
 
 
 
-const Rightside = ({groupid , newgname}) => {
+const Rightside = ({groupid , newgname, photourl}) => {
 
 
     const [gname, setgname] = useState([])
@@ -78,7 +78,7 @@ const Rightside = ({groupid , newgname}) => {
       transition={{ type:'spring', duration: 2 }}
 
     className="chat_header">
-    <Avatar/>
+    <Avatar src={photourl} />
     <h3>  {groupid ? newgname : "Selcet a chat for text" } </h3>
 
     </motion.div>
