@@ -85,8 +85,8 @@ const Rightside = ({groupid , newgname}) => {
     <div  className="body"  > 
     { groupid ? smsg.map((show)=>{ 
       return( <>
-    <motion.div  initial={{Opacity:0, y:50 }}
-    animate={{opacity:1, y:0 }}
+    <motion.div  initial={{Opacity:0, y:40 , scaleY:0 }}
+    animate={{opacity:1, y:0 , scaleY:1 }}
     transition={{ type:'spring', duration: 2 }}
 
      className= {show.from===auth.currentUser.email ? "msg-left msg" : "msg-right msg"} >
