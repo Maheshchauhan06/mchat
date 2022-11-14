@@ -55,11 +55,14 @@ const Leftside = ({user, groupid, newgname, photourl}) => {
       e.preventDefault();
       const payload = { gname : group, timestamp : serverTimestamp() }
       await addDoc(colref, payload);
-      setgroup("");
-      console.log(newgname);
+      setgroup("")
     }
 
-    
+    const value =async (id, name, photo)=>{
+      await groupid(id);
+      await newgname(name)
+      await photourl(photo)
+    }
 
 
   return (
@@ -89,7 +92,7 @@ const Leftside = ({user, groupid, newgname, photourl}) => {
     })}{
       people.map((show)=>{
         return(
-          <motion.div onClick={()=>{ {groupid(show.id)} {photourl(show.photo)} {newgname(show.name)} }} initial={{ opacity: 0, y: 50 }}
+          <motion.div onClick={()=>{value(show.id,show.name, show.photo) }} initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ type: "spring", duration: 2 }}
      className="userchat_box">

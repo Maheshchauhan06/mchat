@@ -56,9 +56,9 @@ const Rightside = ({groupid , newgname, photourl}) => {
      e.preventDefault()
      const userg = groupid;
     const payload2 = {
-      photo :  auth.currentUser.photoURL,
-      name : auth.currentUser.displayName,
-      from : auth.currentUser.email,
+      photo :  auth.currentUser?.photoURL,
+      name : auth.currentUser?.displayName,
+      from : auth.currentUser?.email,
      newmsg,
      createdAt : Timestamp.fromDate(new Date()),
    }
@@ -89,11 +89,11 @@ const Rightside = ({groupid , newgname, photourl}) => {
     animate={{opacity:1, y:0 , scaleY:1 }}
     transition={{ type:'spring', duration: 2 }}
 
-     className= {show.from===auth.currentUser.email ? "msg-left msg" : "msg-right msg"} >
-        <h2 className ={show.from===auth.currentUser.email ? "chatleft-msg" : "chatright-msg"} > 
-        <Avatar src={show?.photo} className = {show.from===auth.currentUser.email ? "chatleft-photo" : "chatright-photo"}/>
+     className= {show.from===auth.currentUser?.email ? "msg-left msg" : "msg-right msg"} >
+        <h2 className ={show.from===auth.currentUser?.email ? "chatleft-msg" : "chatright-msg"} > 
+        <Avatar src={show.photo} className = {show.from===auth.currentUser?.email ? "chatleft-photo" : "chatright-photo"}/>
  {show?.newmsg} 
-        <p className = {show.from===auth.currentUser.email ? "chatleft-name" : "chatright-name"} >{show?.name} </p>
+        <p className = {show.from===auth.currentUser?.email ? "chatleft-name" : "chatright-name"} >{show?.name} </p>
           </h2>
         </motion.div>
       
