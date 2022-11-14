@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 
 
 
-const Chats = ({id,groupname,groupid,newgname,photourl}) => {
+const Chats = ({id,groupname,groupid,newgname}) => {
 
 
   const deleted = async()=>{
@@ -20,7 +20,6 @@ const Chats = ({id,groupname,groupid,newgname,photourl}) => {
     const value = ()=>{
       groupid(id)
       newgname(groupname)
-      photourl('')
     }
   
 

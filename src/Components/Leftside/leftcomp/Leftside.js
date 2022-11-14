@@ -7,12 +7,11 @@ import db, { auth } from '../../../firebase';
 import Button from '@mui/material/Button';
 import Chats from '../Chats/Chats';
 import { signOut } from 'firebase/auth';
-import { addDoc, collection, doc, onSnapshot, orderBy, query, serverTimestamp, where } from 'firebase/firestore';
+import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp } from 'firebase/firestore';
 import { motion } from 'framer-motion'
 
 
-
-const Leftside = ({user, groupid, newgname, photourl}) => {
+const Leftside = ({user, groupid, newgname}) => {
 
   // to logout 
    const logout = () =>{
@@ -22,9 +21,8 @@ const Leftside = ({user, groupid, newgname, photourl}) => {
    // short form
    const colref = collection(db, "users")
 
-   // showing groups
+   // creating groups
    const [showG, setshowG] = useState([])
-   const [people, setpeople] = useState([])
     useEffect(() => {
       const q = query(colref , orderBy('timestamp', 'desc'))
       onSnapshot(q , (sanpshot)=>{
@@ -33,16 +31,6 @@ const Leftside = ({user, groupid, newgname, photourl}) => {
         ));
       })
      console.log(showG);
-     console.log("😎😎");
-
-     const newq = query(collection(db,'people'),where('id','not-in',[auth.currentUser?.uid]))
-     onSnapshot(newq,(snap)=>{
-      setpeople( snap.docs.map((doc)=>(
-       { ...doc.data(), id: doc.id}
-      ))
-      )
-     })
-     console.log(people);
      console.log("😎😎");
      
     }, [])
@@ -55,14 +43,11 @@ const Leftside = ({user, groupid, newgname, photourl}) => {
       e.preventDefault();
       const payload = { gname : group, timestamp : serverTimestamp() }
       await addDoc(colref, payload);
-      setgroup("")
+      setgroup("");
+      console.log(newgname);
     }
 
-    const value =async (id, name, photo)=>{
-      await groupid(id);
-      await newgname(name)
-      await photourl(photo)
-    }
+    
 
 
   return (
@@ -87,22 +72,11 @@ const Leftside = ({user, groupid, newgname, photourl}) => {
      className="userchats">
     { showG.map((show)=>{
            return(
-     <Chats id={show.id} groupname= {show.gname} photourl={photourl} groupid={groupid} newgname={newgname} />
+     <Chats id={show.id} groupname= {show.gname} groupid={groupid} newgname={newgname} />
            )
-    })}{
-      people.map((show)=>{
-        return(
-          <motion.div onClick={()=>{value(show.id,show.name, show.photo) }} initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ type: "spring", duration: 2 }}
-     className="userchat_box">
-          <Avatar src={show.photo} />
-          <h4 > {show.name} </h4>
-          </motion.div>
-        )
-      })
-    }
-    </div>
+    })
+
+    }</div>
     </div> 
     </div>
     </>
