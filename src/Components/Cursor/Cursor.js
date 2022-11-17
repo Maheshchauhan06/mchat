@@ -4,9 +4,9 @@ import AnimateCursor from 'react-animated-cursor'
 const Cursor = () => {
   return (
     <> <AnimateCursor
-    innerSize={10}
-    outerSize={14}
-    color='193, 11, 111'
+    innerSize={15}
+    outerSize={15}
+    color='186, 148, 209'
     outerAlpha={0.2}
     innerScale={0.7}
     outerScale={4}
