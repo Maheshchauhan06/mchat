@@ -21,7 +21,7 @@ const Leftside = ({user, groupid, newgname}) => {
    // short form
    const colref = collection(db, "users")
 
-   // creating groups
+   // showing groups
    const [showG, setshowG] = useState([])
     useEffect(() => {
       const q = query(colref , orderBy('timestamp', 'desc'))
@@ -34,6 +34,7 @@ const Leftside = ({user, groupid, newgname}) => {
      console.log("😎😎");
      
     }, [])
+
 
     
     // adding groups 

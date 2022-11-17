@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Register from './Pages/Register';
 import Chatpage from './Pages/Chatpage';
+import Cursor from './Components/Cursor/Cursor';
 
 
 const App =() => {
@@ -18,6 +19,7 @@ const App =() => {
      })
     }, []);
 
+     // motion divs
     const divs = [
         { num : 'one div' },
         { num : 'two div' },
@@ -28,7 +30,8 @@ const App =() => {
 
     
 
-  return (
+  return ( <> <Cursor/>
+    {
       user ? <div className="chatpage">
        <Chatpage user={user} />
       </div> :  
@@ -56,8 +59,8 @@ const App =() => {
       </BrowserRouter>
       </div>
        </div>
-      
-
+    }
+</>
   );
 }
 
