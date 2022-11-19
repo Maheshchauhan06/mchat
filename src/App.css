@@ -104,7 +104,7 @@
   width: 40px;
   z-index: 9999;
   pointer-events: none;
-  transition: all .15s;
+  transition: all .8s;
 }
 
 #tracker > p{

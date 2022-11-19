@@ -6,12 +6,12 @@ import TextField from '@mui/material/TextField';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
-import { auth } from '../../firebase';
+import { auth, storage } from '../../firebase';
 import db from '../../firebase';
 import { addDoc, collection ,onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
 import { useRef } from 'react';
 import {motion} from 'framer-motion'
-
+import { ref, uploadBytes } from 'firebase/storage';
 
 
 const Rightside = ({groupid , newgname}) => {
@@ -66,7 +66,14 @@ const Rightside = ({groupid , newgname}) => {
      setnewmsg("");
    }
 
+
+   // uplaoding imgs to firebase
+      const [imguplaod, setimguplaod] = useState(null)
    
+      const uploadimg = ()=>{
+        if(imguplaod==null)return;
+        const imgref = ref( storage, newgname/imguplaod.name + Math.floor((Math.random()*10000)+1) )
+      }
 
 
   return (
@@ -105,7 +112,7 @@ const Rightside = ({groupid , newgname}) => {
     </div>
     <form onSubmit={(e)=>sendmsg(e)} className="footer">
     <label htmlFor="icon-button-file">
-    <Input disabled={!groupid} sx={{width:'0px'}} accept="image/*" id="icon-button-file" type="file" />
+    <Input onChange={(e)=> setimgupload(e.target.files[0]) }  disabled={!groupid} sx={{width:'0px'}} accept="image/*" id="icon-button-file" type="file" />
     <IconButton disabled={!groupid}   color="primary" aria-label="upload picture" component="span">
       <PhotoCamera />
     </IconButton>
