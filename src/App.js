@@ -28,14 +28,23 @@ const App =() => {
 
     ]
 
+    const tracker = document.getElementById('tracker');
+    document.body.addEventListener('mousemove',e=>{
+      tracker.style.left = `${e.clientX}px`
+      tracker.style.top = `${e.clientY}px`
+    })
+
     
 
   return ( <> <Cursor/>
+      <div  id='tracker'>
+        <p> 😎 </p>
+       </div>
     {
-      user ? <div className="chatpage">
-       <Chatpage user={user} />
+      user ? <div id="chatpage"  className="chatpage">
+       <Chatpage  user={user} />
       </div> :  
-      <div className="loginpage">
+      <div   className="loginpage">
     
       {  divs.map((number)=>{
            return ( <motion.div 
@@ -50,7 +59,7 @@ const App =() => {
       })
       }
 
-      <div className="landingpage">
+      <div  className="landingpage">
       <BrowserRouter>
       <Routes>
       <Route  path = "/" element={<Landingpage/>} />

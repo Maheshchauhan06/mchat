@@ -31,6 +31,8 @@
   justify-content: center;
   background: linear-gradient(0deg, #1CB5E0 2%, #0c1675 98%);
 }
+
+
 .chatbox {
   width: 95vw;
   height: 90vh;
@@ -94,6 +96,20 @@
   background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
 }
 
+
+#tracker{
+  position: fixed;
+  transform: translate((-50%,-50%));
+  width: 40px;
+  width: 40px;
+  z-index: 9999;
+  pointer-events: none;
+  transition: all .15s;
+}
+
+#tracker > p{
+font-size: 2rem;
+}
 
 
 
