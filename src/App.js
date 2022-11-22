@@ -28,18 +28,8 @@ const App =() => {
 
     ]
 
-    const tracker = document.getElementById('tracker');
-    document.body.addEventListener('mousemove',e=>{
-      tracker.style.left = `${e.clientX}px`
-      tracker.style.top = `${e.clientY}px`
-    })
-
-    
 
   return ( <> <Cursor/>
-      <div  id='tracker'>
-        <p> 😎 </p>
-       </div>
     {
       user ? <div id="chatpage"  className="chatpage">
        <Chatpage  user={user} />

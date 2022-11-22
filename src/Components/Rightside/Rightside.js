@@ -67,15 +67,6 @@ const Rightside = ({groupid , newgname}) => {
    }
 
 
-   // uplaoding imgs to firebase
-      const [imguplaod, setimguplaod] = useState(null)
-   
-      const uploadimg = ()=>{
-        if(imguplaod==null)return;
-        const imgref = ref( storage, newgname/imguplaod.name + Math.floor((Math.random()*10000)+1) )
-      }
-
-
   return (
     <> 
     <div className="user_chatpage">
@@ -111,12 +102,6 @@ const Rightside = ({groupid , newgname}) => {
     <div ref={scrollmsg} ></div>
     </div>
     <form onSubmit={(e)=>sendmsg(e)} className="footer">
-    <label htmlFor="icon-button-file">
-    <Input onChange={(e)=> setimgupload(e.target.files[0]) }  disabled={!groupid} sx={{width:'0px'}} accept="image/*" id="icon-button-file" type="file" />
-    <IconButton disabled={!groupid}   color="primary" aria-label="upload picture" component="span">
-      <PhotoCamera />
-    </IconButton>
-  </label>
   <div className="input_fieldbox">
  
 <TextField fullWidth disabled={!groupid}  value={newmsg} onChange = {(e)=> setnewmsg(e.target.value)}   id="standard-basic" label="type something" variant="standard" /> 
