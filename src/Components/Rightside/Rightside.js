@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react'
 import './Rightside.css'
 import { Avatar, Input } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { auth, storage } from '../../firebase';
@@ -11,7 +9,6 @@ import db from '../../firebase';
 import { addDoc, collection ,onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
 import { useRef } from 'react';
 import {motion} from 'framer-motion'
-import { ref, uploadBytes } from 'firebase/storage';
 
 
 const Rightside = ({groupid , newgname}) => {

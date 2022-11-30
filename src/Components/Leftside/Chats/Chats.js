@@ -31,7 +31,7 @@ const Chats = ({id,groupname,groupid,newgname}) => {
      onClick={ value } className="userchat_box">
           <Avatar/>
           <h4 > {groupname} </h4>
-          <IconButton sx={{marginLeft:'auto', ":hover":{ color:'red' } }}   aria-label="delete">
+          <IconButton sx={{marginLeft:'auto' ,color:"blue"  ,  ":hover":{ color:'white', backgroundColor:'blue' } }}   aria-label="delete">
           <DeleteIcon  onClick={deleted} />
         </IconButton>
           </motion.div>

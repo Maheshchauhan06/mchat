@@ -60,7 +60,7 @@ const Leftside = ({user, groupid, newgname}) => {
     className="header">
     <Avatar src= { auth.currentUser?.photoURL } alt = "tera net slow hai" />
       <h3>{auth.currentUser?.displayName  } </h3>
-      <LogoutIcon onClick={logout} />
+      <LogoutIcon sx={{color:'white'}} onClick={logout} />
     </motion.div>
     <div className="searchbar">
    <form onSubmit={addgroup}  className="searchbox"> 
