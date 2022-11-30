@@ -88,20 +88,21 @@ const Rightside = ({groupid , newgname}) => {
         <h2 className ={show.from===auth.currentUser.email ? "chatleft-msg" : "chatright-msg"} > 
         <Avatar src={show?.photo} className = {show.from===auth.currentUser.email ? "chatleft-photo" : "chatright-photo"}/>
  {show?.newmsg} 
-        <p className = {show.from===auth.currentUser.email ? "chatleft-name" : "chatright-name"} >{show?.name} </p>
+        <p  className = {show.from===auth.currentUser.email ? "chatleft-name" : "chatright-name"} >{show?.name} </p>
           </h2>
         </motion.div>
       
   <div ></div> </> )}) : <motion.h1 initial={{Opacity:0, x:50 }}
   animate={{opacity:1, x:0 }}
   transition={{ type:'spring', duration: 2 }}
-  >selcet group to chat</motion.h1> } 
+  style={{color:'white' }}
+  >Select group to chat</motion.h1> } 
     <div ref={scrollmsg} ></div>
     </div>
     <form onSubmit={(e)=>sendmsg(e)} className="footer">
   <div className="input_fieldbox">
  
-<TextField fullWidth disabled={!groupid}  value={newmsg} onChange = {(e)=> setnewmsg(e.target.value)}   id="standard-basic" label="type something" variant="standard" /> 
+<TextField fullWidth disabled={!groupid}  value={newmsg} onChange = {(e)=> setnewmsg(e.target.value)}   id="standard-basic" label="Start msging" variant="standard" /> 
   </div>
   <Button disabled = {!newmsg || !groupid } type="submit" variant="contained"> send </Button>
  

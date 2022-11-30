@@ -10,21 +10,18 @@
     padding: 20px;
     background: white;
     border-radius: 1rem;
-    
   }
   .chat_header > h3 {
     margin-left: 20px;
+    color: var(--blue);
   }
   .body {
-    background-image: url(https://w0.peakpx.com/wallpaper/508/606/HD-wallpaper-whatsapp-l-background-doodle-pattern-patterns.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     flex: 1;
     width: 100%;
     overflow-y: scroll;
     scroll-behavior: smooth;
     padding: .6rem .9rem;
+  background: linear-gradient(0deg, #1CB5E0 2%, #0c1675 98%);
   }
 
   .msg{
@@ -43,6 +40,7 @@
     background: #0a74bb;
     padding-left: auto;
     border-radius: 10px 0px 10px 10px;
+    color: var(--black);
   }
   
 
@@ -52,6 +50,7 @@
     background: #03f367;
     padding-right: auto;
     border-radius: 0px 10px 10px 10px;
+    color: var(--black);
   }
   .chatright-photo {
     position: absolute;
@@ -63,8 +62,9 @@
   .chatright-name {
     position: absolute;
     left: 15px;
-    bottom: -23px;
+    bottom: -25px;
     font-size: 10px;
+    color: var(--white);
   }
   .chatleft-photo {
     position: absolute;
@@ -76,6 +76,7 @@
     bottom: -23px;
     right: 10px;
     font-size: 10px;
+    color: var(--white);
   }
 
   
