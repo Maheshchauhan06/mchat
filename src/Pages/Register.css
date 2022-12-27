@@ -10,24 +10,39 @@
     align-items: center;
     flex-direction: column;
   justify-content: flex-start;
-  width: 35rem;
+  width: fit-content;
   height: fit-content;
-  padding: 3rem;
+  padding: 1.5rem 3rem;
   background: var(--white);
   border-radius: 1rem;
 }
+ .contain-register> h2{
+    color:  rgba(29, 5, 5, 0.726);
+ }
+
 .contain-register > input{
     padding: 1rem;
-    width: 30rem;
-   border-radius: .8rem;
-margin: .5rem;
+    width: 20rem;
+margin: .3rem;
  outline-width: 0;
- border: 1px solid var(--gray);
-outline-color: var(--white);
+ border-top: 0;
+ border-left: 0;
+ border-right: 0;
+ border-style: solid;
+ border-color: var(--gray);
+}
+#file{
+  border-bottom: 0;
 }
 
 .contain-register > input::placeholder{
-    color: var(--blue);
+    color: var(--gray);
+}
+
+#img{
+  display: flex;
+  padding: 1rem;
+  align-items: center;
 }
 
 
