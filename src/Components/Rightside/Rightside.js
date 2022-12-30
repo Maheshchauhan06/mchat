@@ -87,7 +87,11 @@ const Rightside = ({groupid , newgname}) => {
     <div  className="body"  > 
     { groupid ? smsg.map((show)=>{ 
       return( <> { setlatestmsg(show.lastmsg) }
-          <div className={show.from!==auth.currentUser.email? 'msg' : 'owner'} >
+      
+          <motion.div  initial={{Opacity:0, y:50 }}
+          animate={{opacity:1, y:0 }}
+          transition={{ type:'spring', duration: 2 }}
+           className={show.from!==auth.currentUser.email? 'msg' : 'owner'} >
           <div className="msginfo">
              <Avatar src={show?.photo}  />
              <span> just now </span>
@@ -95,7 +99,7 @@ const Rightside = ({groupid , newgname}) => {
           <div className="msgcontent">
           <p>{ show?.newmsg }</p>
           </div>
-          </div>
+          </motion.div>
       
   <div ></div> </> )}) : <motion.h1 initial={{Opacity:0, x:50 }}
   animate={{opacity:1, x:0 }}
