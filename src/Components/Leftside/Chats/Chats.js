@@ -5,10 +5,20 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { deleteDoc, doc } from 'firebase/firestore';
 import db, { auth } from '../../../firebase';
 import { motion } from 'framer-motion'
+import { useContext } from 'react';
+import { lastmsg } from '../../../Pages/Chatpage';
 
 
 
 const Chats = ({id,groupname,groupid,newgname}) => {
+
+  const { latestmsg} = useContext(lastmsg);
+ 
+  let newmsg = "";
+
+   if(latestmsg?.length > 4){
+      newmsg = latestmsg[0]+latestmsg[1]+latestmsg[2]+latestmsg[3]+"..."
+   }
 
 
   const deleted = async()=>{
@@ -29,9 +39,10 @@ const Chats = ({id,groupname,groupid,newgname}) => {
     animate={{ opacity: 1, y: 0 }}
     transition={{ type: "spring", duration: 2 }}
      onClick={ value } className="userchat_box">
-          <Avatar/>
+          <Avatar/> <div>
           <h4 > {groupname} </h4>
-          <IconButton sx={{marginLeft:'auto' ,color:"blue"  ,  ":hover":{ color:'white', backgroundColor:'blue' } }}   aria-label="delete">
+          <p> {newmsg} </p> </div>
+          <IconButton sx={{marginLeft:'auto' ,color:"black"  ,  ":hover":{ color:'white', backgroundColor:'black' } }}   aria-label="delete">
           <DeleteIcon  onClick={deleted} />
         </IconButton>
           </motion.div>

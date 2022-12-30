@@ -46,9 +46,7 @@ const Leftside = ({user, groupid, newgname}) => {
       await addDoc(colref, payload);
       setgroup("");
       console.log(newgname);
-    }
-
-    
+    }    
 
 
   return (
@@ -60,7 +58,9 @@ const Leftside = ({user, groupid, newgname}) => {
     className="header">
     <Avatar src= { auth.currentUser?.photoURL } alt = "tera net slow hai" />
       <h3>{auth.currentUser?.displayName  } </h3>
-      <LogoutIcon sx={{color:'white'}} onClick={logout} />
+      <IconButton>
+      <LogoutIcon sx={{color:'black'}} onClick={logout} />
+      </IconButton>
     </motion.div>
     <div className="searchbar">
    <form onSubmit={addgroup}  className="searchbox"> 

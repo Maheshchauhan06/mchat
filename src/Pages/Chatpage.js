@@ -1,16 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { createContext, useEffect } from 'react'
 import './Chatpage.css'
 import Rightside from '../Components/Rightside/Rightside'
 import Leftside from '../Components/Leftside/leftcomp/Leftside'
 import { useState } from 'react'
 
+export const lastmsg = createContext();
+
 const Chatpage = ({user}) => {
     const [groupid, setgroupid] = useState('')
     const [newgname, setnewgname] = useState('hlo')
+    const [latestmsg, setlatestmsg] = useState('')
   
+
     
   
-  return (
+  return ( <lastmsg.Provider value={{latestmsg, setlatestmsg}} >
     <div className='chat-box' >
         <div className="Chatleftside">
         <Leftside user={user} groupid={setgroupid} newgname={setnewgname} />
@@ -18,7 +22,7 @@ const Chatpage = ({user}) => {
         <div className="chatrightside">
          <Rightside groupid={groupid} newgname={newgname} />
         </div>
-    </div>
+    </div></lastmsg.Provider>
   )
 }
 

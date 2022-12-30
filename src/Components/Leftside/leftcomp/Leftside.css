@@ -12,13 +12,13 @@
     display: flex;
     align-items: center;
     padding: 8px;
-    background: var(--blue);
+    background:  var(--white) ;
     border-radius: 10px 0 0 0;
     justify-content: space-between;
   }
   .header > h3 {
     margin-left: 10px;
-    color: var(--white);
+    color: var(--black);
   }
   .searchbox {
     display: flex;
@@ -30,18 +30,18 @@
   .searchbox > input {
     outline-width: 0;
     border-width: 0;
-    background: var(--blue);
-    color: var(--white);
+    background: var(--white);
+    color:  var(--blue);
     padding: 10px;
     width: 100%;
     border-radius: 20px;
   }
   .searchbox > input::placeholder {
-    color: #ecf0f1;
+    color: var(--gray);
   }
   
   .searchbox > .MuiSvgIcon-root {
-    color: black;
+    color: var(--blue);
   }
   .searchbar {
     padding: 3px;

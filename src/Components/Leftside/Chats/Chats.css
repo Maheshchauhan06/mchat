@@ -8,10 +8,22 @@
     border-bottom: 1px solid gray;
     margin: 2px 0;
   }
-  .userchat_box > h4 {
+  .userchat_box > div > h4 {
     margin-left: 10px;
-    font-size: 1.3rem;
-    color: var(--blue);
+    font-size: 1.1rem;
+    color: var(--black);
+  }
+
+  .userchat_box > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .userchat_box  > div > p{
+    font-size: .7rem;
+    font-weight: 700;
+    color: rgb(90, 30, 201);
+    padding-left: 10px;
   }
 
   .userchats :hover {

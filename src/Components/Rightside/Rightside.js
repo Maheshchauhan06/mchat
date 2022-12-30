@@ -9,6 +9,8 @@ import db from '../../firebase';
 import { addDoc, collection ,onSnapshot, orderBy, query, Timestamp } from 'firebase/firestore';
 import { useRef } from 'react';
 import {motion} from 'framer-motion'
+import { lastmsg } from '../../Pages/Chatpage';
+import { useContext } from 'react';
 
 
 const Rightside = ({groupid , newgname}) => {
@@ -57,11 +59,16 @@ const Rightside = ({groupid , newgname}) => {
       name : auth.currentUser.displayName,
       from : auth.currentUser.email,
      newmsg,
+     lastmsg : newmsg,
      createdAt : Timestamp.fromDate(new Date()),
    }
      await addDoc(collection(db, 'users', userg, 'chats'),payload2);
      setnewmsg("");
    }
+
+
+    const { setlatestmsg } = useContext(lastmsg);
+
 
 
   return (
@@ -79,18 +86,16 @@ const Rightside = ({groupid , newgname}) => {
     </motion.div>
     <div  className="body"  > 
     { groupid ? smsg.map((show)=>{ 
-      return( <>
-    <motion.div  initial={{Opacity:0, y:50 }}
-    animate={{opacity:1, y:0 }}
-    transition={{ type:'spring', duration: 2 }}
-
-     className= {show.from===auth.currentUser.email ? "msg-left msg" : "msg-right msg"} >
-        <h2 className ={show.from===auth.currentUser.email ? "chatleft-msg" : "chatright-msg"} > 
-        <Avatar src={show?.photo} className = {show.from===auth.currentUser.email ? "chatleft-photo" : "chatright-photo"}/>
- {show?.newmsg} 
-        <p  className = {show.from===auth.currentUser.email ? "chatleft-name" : "chatright-name"} >{show?.name} </p>
-          </h2>
-        </motion.div>
+      return( <> { setlatestmsg(show.lastmsg) }
+          <div className={show.from!==auth.currentUser.email? 'msg' : 'owner'} >
+          <div className="msginfo">
+             <Avatar src={show?.photo}  />
+             <span> just now </span>
+          </div>
+          <div className="msgcontent">
+          <p>{ show?.newmsg }</p>
+          </div>
+          </div>
       
   <div ></div> </> )}) : <motion.h1 initial={{Opacity:0, x:50 }}
   animate={{opacity:1, x:0 }}

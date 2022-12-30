@@ -7,7 +7,6 @@ import { motion } from 'framer-motion'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Register from './Pages/Register';
 import Chatpage from './Pages/Chatpage';
-import Cursor from './Components/Cursor/Cursor';
 
 
 const App =() => {
@@ -29,7 +28,7 @@ const App =() => {
     ]
 
 
-  return ( <> <Cursor/>
+  return ( <> 
     {
       user ? <div id="chatpage"  className="chatpage">
        <Chatpage  user={user} />
