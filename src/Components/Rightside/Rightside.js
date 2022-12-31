@@ -38,6 +38,7 @@ const Rightside = ({groupid , newgname}) => {
            ))
          } )
      }
+
     
 
 
@@ -86,8 +87,8 @@ const Rightside = ({groupid , newgname}) => {
     </motion.div>
     <div  className="body"  > 
     { groupid ? smsg.map((show)=>{ 
-      return( <> { setlatestmsg(show.lastmsg) }
-      
+      return( 
+         <>  { setlatestmsg(show.lastmsg) }
           <motion.div  initial={{Opacity:0, y:50 }}
           animate={{opacity:1, y:0 }}
           transition={{ type:'spring', duration: 2 }}
@@ -97,7 +98,7 @@ const Rightside = ({groupid , newgname}) => {
           </div>
           <div className="msgcontent">
           <span style={{color:'white'}} > {show.name} </span>
-          <p>{ show?.newmsg }</p>
+          <p>{ show?.newmsg }  </p>
           </div>
           </motion.div>
       
@@ -113,7 +114,7 @@ const Rightside = ({groupid , newgname}) => {
  
 <TextField fullWidth disabled={!groupid}  value={newmsg} onChange = {(e)=> setnewmsg(e.target.value)}   id="standard-basic" label="Start msging" variant="standard" /> 
   </div>
-  <Button disabled = {!newmsg || !groupid } type="submit" variant="contained"> send </Button>
+  <Button  disabled = {!newmsg || !groupid } type="submit" variant="contained"> send </Button>
  
   
     </form>
