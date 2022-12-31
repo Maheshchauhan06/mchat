@@ -11,6 +11,7 @@ import { useRef } from 'react';
 import {motion} from 'framer-motion'
 import { lastmsg } from '../../Pages/Chatpage';
 import { useContext } from 'react';
+import { Camera, CameraAltRounded } from '@mui/icons-material';
 
 
 const Rightside = ({groupid , newgname}) => {
@@ -73,7 +74,7 @@ const Rightside = ({groupid , newgname}) => {
 
 
   return (
-    <> 
+    <div> 
     <div className="user_chatpage">
       
     <motion.div  initial={{Opacity:0, x:50 }}
@@ -102,24 +103,24 @@ const Rightside = ({groupid , newgname}) => {
           </div>
           </motion.div>
       
-  <div ></div> </> )}) : <motion.h1 initial={{Opacity:0, x:50 }}
-  animate={{opacity:1, x:0 }}
-  transition={{ type:'spring', duration: 2 }}
-  style={{color:'white' }}
-  >Select group to chat</motion.h1> } 
-    <div ref={scrollmsg} ></div>
-    </div>
-    <form onSubmit={(e)=>sendmsg(e)} className="footer">
-  <div className="input_fieldbox">
- 
-<TextField fullWidth disabled={!groupid}  value={newmsg} onChange = {(e)=> setnewmsg(e.target.value)}   id="standard-basic" label="Start msging" variant="standard" /> 
-  </div>
-  <Button  disabled = {!newmsg || !groupid } type="submit" variant="contained"> send </Button>
+           <div ></div> </> )}) : <motion.h1 initial={{Opacity:0, x:50 }}
+                       animate={{opacity:1, x:0 }}
+                transition={{ type:'spring', duration: 2 }}
+                 style={{color:'white' }}
+                >Select group to chat</motion.h1> } 
+             <div ref={scrollmsg} ></div>
+             </div>
+       <form onSubmit={(e)=>sendmsg(e)} className="footer">
+      <div className="input_fieldbox"> 
+    <CameraAltRounded onClick={()=> alert('sorry this feature is not ready yet') } sx={{cursor:'pointer',color:'gray'}} />
+          <TextField fullWidth disabled={!groupid}  value={newmsg} onChange = {(e)=> setnewmsg(e.target.value)}   id="standard-basic" label="Start msging" variant="standard" /> 
+            </div>
+            <Button  disabled = {!newmsg || !groupid } type="submit" variant="contained"> send </Button>
  
   
     </form>
     </div>
-    </>
+    </div>
   )
 }
 
