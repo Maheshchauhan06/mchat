@@ -94,9 +94,9 @@ const Rightside = ({groupid , newgname}) => {
            className={show.from!==auth.currentUser.email? 'msg' : 'owner'} >
           <div className="msginfo">
              <Avatar src={show?.photo}  />
-             <span> just now </span>
           </div>
           <div className="msgcontent">
+          <span style={{color:'white'}} > {show.name} </span>
           <p>{ show?.newmsg }</p>
           </div>
           </motion.div>
