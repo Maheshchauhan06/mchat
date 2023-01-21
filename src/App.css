@@ -1,27 +1,24 @@
-:root{
+:root {
   --black: black;
-  --white : snow;
-  --gray : gray;
-  --blue : blue;
+  --white: snow;
+  --gray: gray;
+  --blue: blue;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.loginpage{
+.loginpage {
   width: fit-content;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(0deg, #1CB5E0 2%, #0c1675 98%);
+  background: linear-gradient(0deg, #1cb5e0 2%, #0c1675 98%);
   position: relative;
   overflow: hidden;
 }
-
-
-
 
 .chatpage {
   width: 100vw;
@@ -29,9 +26,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(0deg, #1CB5E0 2%, #0c1675 98%);
+  background: linear-gradient(0deg, #1cb5e0 2%, #0c1675 98%);
 }
-
 
 .chatbox {
   width: 95vw;
@@ -41,30 +37,32 @@
   display: flex;
 }
 
-.landingpage{
+.landingpage {
   position: absolute;
 }
 
-.div{
+.div {
   border-radius: 2rem;
   position: absolute;
 }
 
-.one, .two{
+.one,
+.two {
   position: absolute;
   width: 12rem;
   height: 12rem;
   background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }
 
-.three, .four{
+.three,
+.four {
   position: absolute;
   width: 12rem;
   height: 12rem;
   background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
 }
 
-.one{
+.one {
   top: 20rem;
   width: 14rem;
   height: 14rem;
@@ -72,7 +70,7 @@
   transform: rotate(30deg);
 }
 
-.two{
+.two {
   top: 10rem;
   width: 6rem;
   height: 6rem;
@@ -80,64 +78,54 @@
   left: 5rem;
 }
 
-.three{
+.three {
   width: 15rem;
   height: 15rem;
   top: 5rem;
   right: -5rem;
   transform: rotate(45deg);
 }
-.four{
+.four {
   width: 10rem;
   height: 10rem;
   top: 25rem;
   right: 2rem;
   transform: rotate(45deg);
-  background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+  background-image: radial-gradient(
+    circle 248px at center,
+    #16d9e3 0%,
+    #30c7ec 47%,
+    #46aef7 100%
+  );
 }
 
-
-#tracker{
+#tracker {
   position: fixed;
-  transform: translate((-50%,-50%));
+  transform: translate((-50%, -50%));
   width: 40px;
   width: 40px;
   z-index: 9999;
   pointer-events: none;
-  transition: all .8s;
+  transition: all 0.8s;
 }
 
-#tracker > p{
-font-size: 2rem;
+#tracker > p {
+  font-size: 2rem;
 }
 
+@media screen and (min-width: 647px) and (max-width: 1023px) {
+  .one {
+    top: 10rem;
+    width: 5rem;
+    height: 5rem;
+    left: 1rem;
+  }
 
-
-
-@media screen and (min-width:647px) and (max-width:1023px) {
- 
-  
-.one{
-  top: 10rem;
-  width: 5rem;
-  height: 5rem;
-  left: 1rem;
-}
-
-.two{
-  top: 20rem;
-  width: 10rem;
-  height: 10rem;
-  transform: rotate(30deg);
-  left: -3rem;
-}
-
-}
-
-
-@media screen and (max-width: 647px) {
-
-
-
-  
+  .two {
+    top: 20rem;
+    width: 10rem;
+    height: 10rem;
+    transform: rotate(30deg);
+    left: -3rem;
+  }
 }
