@@ -6,27 +6,10 @@
   display: flex;
 }
 
-.mobo {
-  display: none;
-}
-
 .Chatleftside {
   width: 30%;
 }
 
 .chatrightside {
   width: 60%;
-}
-
-@media screen and (max-width: 647px) {
-  .pc {
-    display: none;
-  }
-  .mobo {
-    display: inherit;
-  }
-
-  .Chatleftside {
-    width: 100%;
-  }
 }
