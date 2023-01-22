@@ -33,6 +33,7 @@ const Chats = ({ id, groupname }) => {
       >
         <Avatar />{" "}
         <div>
+          {" "}
           <h4> {groupname} </h4>{" "}
         </div>
         <IconButton

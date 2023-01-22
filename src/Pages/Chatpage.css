@@ -1,16 +1,32 @@
-.chat-box{
-    width: 80%;
-    height: 90%;
-    background: var(--white);
-    border-radius: 1rem;
-    display: flex;
+.chat-box {
+  width: 80%;
+  height: 90%;
+  background: var(--white);
+  border-radius: 1rem;
+  display: flex;
 }
 
-.Chatleftside{
-    width: 30%;
+.mobo {
+  display: none;
 }
 
-.chatrightside{
+.Chatleftside {
+  width: 30%;
+}
+
+.chatrightside {
   width: 60%;
 }
 
+@media screen and (max-width: 647px) {
+  .pc {
+    display: none;
+  }
+  .mobo {
+    display: inherit;
+  }
+
+  .Chatleftside {
+    width: 100%;
+  }
+}
