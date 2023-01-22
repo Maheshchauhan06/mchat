@@ -31,7 +31,10 @@ const Chats = ({ id, groupname }) => {
         onClick={value}
         className="userchat_box"
       >
-        <Avatar />{" "}
+        <img
+          src="https://www.pngitem.com/pimgs/m/22-220721_circled-user-male-type-user-colorful-icon-png.png"
+          alt="internet problem"
+        />{" "}
         <div>
           {" "}
           <h4> {groupname} </h4>{" "}
@@ -40,11 +43,14 @@ const Chats = ({ id, groupname }) => {
           sx={{
             marginLeft: "auto",
             color: "black",
-            ":hover": { color: "white", backgroundColor: "black" },
+            ":hover": {
+              color: "white",
+              backgroundColor: "black",
+            },
           }}
           aria-label="delete"
         >
-          <DeleteIcon onClick={deleted} />
+          <DeleteIcon sx={{ fontSize: "70%" }} onClick={deleted} />
         </IconButton>
       </motion.div>
     </>

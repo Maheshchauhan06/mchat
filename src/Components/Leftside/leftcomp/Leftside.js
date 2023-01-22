@@ -48,7 +48,7 @@ const Leftside = ({ user }) => {
   };
 
   return (
-    <>
+    <div>
       {" "}
       <div className="left-box">
         <div className="sidebar">
@@ -58,10 +58,13 @@ const Leftside = ({ user }) => {
             transition={{ type: "spring", duration: 1 }}
             className="header"
           >
-            <Avatar src={auth.currentUser?.photoURL} alt="tera net slow hai" />
+            <img src={auth.currentUser?.photoURL} alt="tera net slow hai" />
             <h3>{auth.currentUser?.displayName} </h3>
             <IconButton>
-              <LogoutIcon sx={{ color: "black" }} onClick={logout} />
+              <LogoutIcon
+                sx={{ color: "black", fontSize: "60%" }}
+                onClick={logout}
+              />
             </IconButton>
           </motion.div>
           <div className="searchbar">
@@ -77,7 +80,7 @@ const Leftside = ({ user }) => {
                 placeholder="create group"
               />
               <Button
-                sx={{ maxWidth: "40%", minWidth: "30%", fontSize: "60%" }}
+                sx={{ fontSize: "50%" }}
                 disabled={!group}
                 type="submit"
                 variant="contained"
@@ -93,7 +96,7 @@ const Leftside = ({ user }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

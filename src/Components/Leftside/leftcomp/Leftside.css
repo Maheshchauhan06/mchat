@@ -1,73 +1,89 @@
 .sidebar {
-    border-radius: 20px 0 0 0;
-    display: flex;
-    flex-direction: column;
-    height: 90vh;
-    width: 100%;
-  }
-  .header > .MuiSvgIcon-root {
-    cursor: pointer;
-  }
-  .header {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    background:  var(--white) ;
-    border-radius: 10px 0 0 0;
-    justify-content: space-between;
-  }
-  .header > h3 {
-    margin-left: 10px;
-    color: var(--black);
-  }
-  .searchbox {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    background: var(--white);
-    border-radius: 10px;
+  border-radius: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 100%;
+}
+.header > .MuiSvgIcon-root {
+  cursor: pointer;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: var(--white);
+  border-radius: 10px 0 0 0;
+  justify-content: space-between;
+}
+.header > h3 {
+  margin-left: 10px;
+  color: var(--black);
+}
+.header > img {
+  width: 3rem;
+  border-radius: 1.5rem;
+}
+.searchbox {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background: var(--white);
+  border-radius: 10px;
+}
+.searchbox > input {
+  outline-width: 0;
+  border-width: 0;
+  background: var(--white);
+  color: var(--blue);
+  padding: 10px;
+  width: 100%;
+  border-radius: 20px;
+}
+.searchbox > input::placeholder {
+  color: var(--gray);
+}
+
+.searchbox > .MuiSvgIcon-root {
+  color: var(--blue);
+}
+.searchbar {
+  padding: 3px;
+  background: #ecf0f1;
+}
+.userchats {
+  flex: 1;
+  overflow-y: scroll;
+}
+.selectchat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0.65;
+}
+
+@media screen and (max-width: 656px) {
+  .searchbox > p {
+    display: none;
   }
   .searchbox > input {
-    outline-width: 0;
-    border-width: 0;
-    background: var(--white);
-    color:  var(--blue);
-    padding: 10px;
     width: 100%;
-    border-radius: 20px;
   }
+
+  .searchbox {
+    flex-direction: column;
+  }
+
   .searchbox > input::placeholder {
-    color: var(--gray);
+    font-size: 80%;
   }
-  
-  .searchbox > .MuiSvgIcon-root {
-    color: var(--blue);
+  .header {
+    font-size: 30%;
   }
-  .searchbar {
-    padding: 3px;
-    background: #ecf0f1;
+  .header > h3 {
+    margin-left: 4px;
   }
-  .userchats {
-    flex: 1;
-    overflow-y: scroll;
+  .header > img {
+    width: 1rem;
   }
-  .selectchat {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0.65;
-  }
-
-  @media screen and (max-width: 456px)  {
-     .searchbox > p{
-      display: none;
-     }
-     .searchbox > input{
-      width: 4rem;
-     }
-
-     .searchbox > input::placeholder{
-      font-size: 80%;
-     }
-     
-  }
+}

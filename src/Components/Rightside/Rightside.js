@@ -77,7 +77,10 @@ const Rightside = () => {
           transition={{ type: "spring", duration: 2 }}
           className="chat_header"
         >
-          <Avatar />
+          <img
+            src="https://www.pngitem.com/pimgs/m/22-220721_circled-user-male-type-user-colorful-icon-png.png"
+            alt="network problem"
+          />
           <h3> {groupid ? newgname : "Selcet a chat for text"} </h3>
         </motion.div>
         <div className="body">
@@ -96,7 +99,7 @@ const Rightside = () => {
                     }
                   >
                     <div className="msginfo">
-                      <Avatar src={show?.photo} />
+                      <img alt="network problem" src={show?.photo} />
                     </div>
                     <div className="msgcontent">
                       <span style={{ color: "white" }}> {show.name} </span>
@@ -121,24 +124,32 @@ const Rightside = () => {
         </div>
         <form onSubmit={(e) => sendmsg(e)} className="footer">
           <div className="input_fieldbox">
-            <CameraAltRounded
-              onClick={() => alert("sorry this feature is not ready yet")}
-              sx={{ cursor: "pointer", color: "gray" }}
-            />
+            <div className="camra">
+              <CameraAltRounded
+                onClick={() => alert("sorry this feature is not ready yet")}
+                sx={{ cursor: "pointer", color: "gray" }}
+              />
+            </div>
             <TextField
               fullWidth
               disabled={!groupid}
               value={newmsg}
               onChange={(e) => setnewmsg(e.target.value)}
               id="standard-basic"
-              label="Start msging"
+              label="Start msg"
               variant="standard"
+              sx={{ width: "100%", fontSize: "5px" }}
             />
           </div>
           <Button
             disabled={!newmsg || !groupid}
             type="submit"
             variant="contained"
+            sx={{
+              width: "20%",
+              fontSize: "10px",
+              padding: "4px",
+            }}
           >
             {" "}
             send{" "}

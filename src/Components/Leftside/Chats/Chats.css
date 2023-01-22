@@ -1,31 +1,52 @@
+.userchat_box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: var(--white);
+  cursor: pointer;
+  border-bottom: 1px solid gray;
+  margin: 2px 0;
+}
 
+.userchat_box > img {
+  width: 3rem;
+}
+
+.userchat_box > div > h4 {
+  margin-left: 10px;
+  font-size: 1.1rem;
+  color: var(--black);
+}
+
+.userchat_box > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userchat_box > div > p {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgb(90, 30, 201);
+  padding-left: 10px;
+}
+
+.userchats :hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@media screen and (max-width: 656px) {
   .userchat_box {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background: var(--white);
-    cursor: pointer;
-    border-bottom: 1px solid gray;
-    margin: 2px 0;
+    padding: 2px;
   }
+
   .userchat_box > div > h4 {
-    margin-left: 10px;
-    font-size: 1.1rem;
-    color: var(--black);
+    font-size: 8px;
+    margin-left: 4px;
   }
 
-  .userchat_box > div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .userchat_box > img {
+    width: 1rem;
   }
-  .userchat_box  > div > p{
-    font-size: .7rem;
-    font-weight: 700;
-    color: rgb(90, 30, 201);
-    padding-left: 10px;
-  }
-
-  .userchats :hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  }
+}
